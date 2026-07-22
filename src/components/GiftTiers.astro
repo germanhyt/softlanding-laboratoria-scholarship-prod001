@@ -1,0 +1,53 @@
+---
+import { DONATE_URL } from "../data/faq";
+---
+
+<section class="bg-brand-gray py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-bold text-center" data-reveal>
+      Every gift adds up to a full career.
+    </h2>
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div
+        class="bg-white rounded-2xl p-8 border border-black/5 flex flex-col"
+        data-reveal
+        style="--reveal-delay: 80ms"
+      >
+        <div class="text-4xl md:text-5xl font-bold text-brand-ink">$50</div>
+        <p class="mt-4 text-base leading-relaxed">
+          Helps cover program costs: coaching, AI-powered tools, community.
+        </p>
+      </div>
+      <div
+        class="bg-white rounded-2xl p-8 border border-black/5 flex flex-col"
+        data-reveal
+        style="--reveal-delay: 180ms"
+      >
+        <div class="text-4xl md:text-5xl font-bold text-brand-ink">$750</div>
+        <p class="mt-4 text-base leading-relaxed">
+          The real cost of one woman's complete program experience. Fund a
+          program scholarship alone, or team up with others to get there
+          together.
+        </p>
+      </div>
+    </div>
+    <p
+      class="mt-8 text-base text-center leading-relaxed"
+      data-reveal
+      style="--reveal-delay: 220ms"
+    >
+      Every dollar goes into a shared fund that gets women through the full
+      program — because no one does this alone.
+    </p>
+    <div class="mt-10 text-center" data-reveal style="--reveal-delay: 280ms">
+      <a
+        href={DONATE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta inline-flex items-center justify-center rounded-full bg-brand-yellow text-brand-ink font-semibold px-8 py-4 text-base"
+      >
+        Make a gift
+      </a>
+    </div>
+  </div>
+</section>

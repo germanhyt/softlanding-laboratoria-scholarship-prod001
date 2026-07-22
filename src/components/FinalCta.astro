@@ -1,0 +1,47 @@
+---
+import { DONATE_URL } from "../data/faq";
+---
+
+<section class="relative py-28 px-6 text-white overflow-hidden">
+  <img
+    src="/images/photo-celebration.jpg"
+    alt="Laboratoria graduates celebrating together"
+    class="absolute inset-0 h-full w-full object-cover"
+    data-reveal="scale"
+  />
+  <div class="absolute inset-0 bg-brand-ink/80"></div>
+  <div class="relative z-10 max-w-3xl mx-auto text-center">
+    <h2
+      class="text-4xl md:text-6xl font-bold leading-tight"
+      data-reveal
+      style="--reveal-delay: 80ms"
+    >
+      Nobody does this alone. Not them. Not us.
+    </h2>
+    <p
+      class="mt-6 text-lg md:text-xl opacity-95"
+      data-reveal
+      style="--reveal-delay: 180ms"
+    >
+      Join the community making it possible.
+    </p>
+    <div class="mt-10" data-reveal style="--reveal-delay: 280ms">
+      <a
+        href={DONATE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta inline-flex items-center justify-center rounded-full bg-brand-yellow text-brand-ink font-semibold px-10 py-5 text-lg"
+      >
+        Support a scholarship
+      </a>
+    </div>
+    <div class="mt-6" data-reveal style="--reveal-delay: 360ms">
+      <a
+        href="#top"
+        class="text-sm underline opacity-90 hover:opacity-100 transition-opacity"
+      >
+        Other ways to give ↑
+      </a>
+    </div>
+  </div>
+</section>

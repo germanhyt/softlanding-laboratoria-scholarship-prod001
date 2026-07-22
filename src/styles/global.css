@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Work Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Work Sans", system-ui, -apple-system, sans-serif;
+
+  --color-brand-ink: #0e1d25;
+  --color-brand-yellow: #ffe521;
+  --color-brand-magenta: #ee77f2;
+  --color-brand-surface: #f4f4f4;
+  --color-brand-mute: #d1d1d1;
+  --color-brand-gray: #f9f9f9;
+  --color-muted-foreground: #5b6770;
+  --color-border: #e6e6e6;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-brand-ink);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* —— Motion system (CSS + IO, no Framer) —— */
+
+.btn-cta {
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    filter 0.25s ease,
+    box-shadow 0.35s var(--ease-out-expo);
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(0.97);
+  box-shadow: 0 12px 28px -12px rgb(14 29 37 / 0.35);
+}
+
+.btn-cta:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Scroll / load reveals */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(1.35rem);
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal="fade"] {
+  transform: none;
+}
+
+[data-reveal="left"] {
+  transform: translateX(-1.25rem);
+}
+
+[data-reveal="right"] {
+  transform: translateX(1.25rem);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.96);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero ken burns (subtle) */
+.hero-media {
+  transform: scale(1.06);
+  transition: transform 8s var(--ease-out-expo);
+}
+
+.hero-media.is-revealed {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal],
+  .hero-media,
+  .btn-cta {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+}

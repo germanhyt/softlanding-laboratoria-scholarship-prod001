@@ -1,0 +1,58 @@
+---
+import { DONATE_URL } from "../data/faq";
+---
+
+<section
+  class="relative min-h-[92vh] flex items-center justify-center text-white overflow-hidden"
+>
+  <img
+    src="/images/photo-hero.jpg"
+    alt="Women gathered at a Laboratoria community event"
+    class="hero-media absolute inset-0 h-full w-full object-cover"
+    data-reveal="scale"
+    style="--reveal-delay: 0ms"
+  />
+  <div class="absolute inset-0 bg-brand-ink/70"></div>
+  <div class="relative z-10 max-w-3xl px-6 py-24 text-center">
+    <h1
+      class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]"
+      data-reveal
+      style="--reveal-delay: 120ms"
+    >
+      Nobody does this alone.
+    </h1>
+    <p
+      class="mt-6 text-lg md:text-xl leading-relaxed opacity-95"
+      data-reveal
+      style="--reveal-delay: 260ms"
+    >
+      The most underrated career tool isn't a skill — it's a community that sees
+      what you're capable of. At Laboratoria, that's where it starts.
+    </p>
+    <div
+      class="mt-10 mx-auto max-w-2xl"
+      data-reveal
+      style="--reveal-delay: 400ms"
+    >
+      <blockquote class="border-l-4 border-brand-magenta pl-5 py-2 text-left">
+        <p class="text-lg md:text-xl italic leading-relaxed">
+          "When you recover your voice, the opportunities you see change — and so
+          do the ones you dare to go after."
+        </p>
+        <footer class="mt-3 text-sm opacity-80 not-italic">
+          — Gabriela Luna, Laboratoria graduate
+        </footer>
+      </blockquote>
+    </div>
+    <div class="mt-10" data-reveal style="--reveal-delay: 540ms">
+      <a
+        href={DONATE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta inline-flex items-center justify-center rounded-full bg-brand-yellow text-brand-ink font-semibold px-10 py-5 text-lg"
+      >
+        Support a woman's career
+      </a>
+    </div>
+  </div>
+</section>
