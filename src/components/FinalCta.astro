@@ -13,9 +13,10 @@ const t = useTranslations(lang);
 <section class="relative py-28 px-6 text-white overflow-hidden">
   <img
     src="/images/photo-celebration.jpg"
-    alt=""
+    alt={t("img.celebration.alt")}
     class="absolute inset-0 h-full w-full object-cover"
     data-reveal="scale"
+    loading="lazy"
   />
   <div class="absolute inset-0 bg-brand-ink/80"></div>
   <div class="relative z-10 max-w-3xl mx-auto text-center">

@@ -24,7 +24,12 @@ const t = useTranslations(lang);
 const faqItems = getFaqItems(lang);
 ---
 
-<Layout lang={lang} title={t("meta.title")} description={t("meta.description")}>
+<Layout
+  lang={lang}
+  title={t("meta.title")}
+  description={t("meta.description")}
+  faqItems={faqItems}
+>
   <Header lang={lang} />
   <main>
     <Hero lang={lang} />

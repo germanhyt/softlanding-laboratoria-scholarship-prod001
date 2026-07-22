@@ -1,18 +1,101 @@
 ---
 import "../styles/global.css";
 import type { Lang } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import { DONATE_URL } from "../data/faq";
+import type { FaqItem } from "../data/faq";
 
 interface Props {
   title?: string;
   description?: string;
   lang?: Lang;
+  faqItems?: FaqItem[];
 }
 
 const {
-  title = "Laboratoria Scholarship Fund",
-  description = "",
+  title,
+  description,
   lang = "es",
+  faqItems = [],
 } = Astro.props;
+
+const t = useTranslations(lang);
+const pageTitle = title ?? t("meta.title");
+const pageDescription = description ?? t("meta.description");
+
+const site = Astro.site ?? new URL("https://give-laboratoria.la");
+const canonicalURL = new URL(Astro.url.pathname, site);
+const ogImageURL = new URL("/images/photo-hero.jpg", site);
+const logoURL = new URL("/images/logo-laboratoria.png", site);
+const esURL = new URL("/", site);
+const enURL = new URL("/en/", site);
+const ogLocale = lang === "es" ? "es_LA" : "en_US";
+const ogLocaleAlt = lang === "es" ? "en_US" : "es_LA";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${site.origin}/#organization`,
+      name: "Laboratoria",
+      url: "https://www.laboratoria.la",
+      logo: {
+        "@type": "ImageObject",
+        url: logoURL.href,
+      },
+      sameAs: ["https://www.laboratoria.la"],
+      description: pageDescription,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.origin}/#website`,
+      url: site.origin + "/",
+      name: t("meta.siteName"),
+      description: pageDescription,
+      inLanguage: ["es", "en"],
+      publisher: { "@id": `${site.origin}/#organization` },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalURL.href}#webpage`,
+      url: canonicalURL.href,
+      name: pageTitle,
+      description: pageDescription,
+      isPartOf: { "@id": `${site.origin}/#website` },
+      about: { "@id": `${site.origin}/#organization` },
+      inLanguage: lang,
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: ogImageURL.href,
+      },
+    },
+    {
+      "@type": "DonateAction",
+      name: t("hero.cta"),
+      target: DONATE_URL,
+      recipient: { "@id": `${site.origin}/#organization` },
+    },
+    ...(faqItems.length
+      ? [
+          {
+            "@type": "FAQPage",
+            "@id": `${canonicalURL.href}#faq`,
+            isPartOf: { "@id": `${canonicalURL.href}#webpage` },
+            inLanguage: lang,
+            mainEntity: faqItems.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          },
+        ]
+      : []),
+  ],
+};
 ---
 
 <!doctype html>
@@ -20,8 +103,37 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={t("meta.keywords")} />
+    <meta name="author" content="Laboratoria" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#0E1D25" />
     <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="alternate" hreflang="es" href={esURL.href} />
+    <link rel="alternate" hreflang="en" href={enURL.href} />
+    <link rel="alternate" hreflang="x-default" href={esURL.href} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={t("meta.siteName")} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
+    <meta property="og:image" content={ogImageURL.href} />
+    <meta property="og:image:alt" content={t("meta.ogImageAlt")} />
+    <meta property="og:image:width" content="1459" />
+    <meta property="og:image:height" content="1824" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImageURL.href} />
+    <meta name="twitter:image:alt" content={t("meta.ogImageAlt")} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,9 +141,11 @@ const {
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate" hreflang="es" href="/" />
-    <link rel="alternate" hreflang="en" href="/en/" />
-    <title>{title}</title>
+    <link rel="apple-touch-icon" href="/images/logo-laboratoria.png" />
+
+    <title>{pageTitle}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body id="top">
     <slot />

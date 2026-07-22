@@ -24,10 +24,11 @@ const t = useTranslations(lang);
     </div>
     <img
       src="/images/photo-community.jpg"
-      alt=""
+      alt={t("img.community.alt")}
       class="w-full rounded-2xl object-cover aspect-[4/5]"
       data-reveal="right"
       style="--reveal-delay: 140ms"
+      loading="lazy"
     />
   </div>
   <div

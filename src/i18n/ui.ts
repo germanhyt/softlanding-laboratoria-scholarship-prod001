@@ -11,6 +11,11 @@ const es = {
   "meta.title": "Fondo de Becas Laboratoria — Nadie hace esto sola.",
   "meta.description":
     "La herramienta más subestimada para impulsar una carrera profesional no es una habilidad, es una comunidad que reconoce todo tu potencial. En Laboratoria, ahí es donde todo comienza.",
+  "meta.ogImageAlt":
+    "Mujeres de la comunidad Laboratoria reunidas en un encuentro",
+  "meta.siteName": "Fondo de Becas Laboratoria",
+  "meta.keywords":
+    "Laboratoria, becas, donaciones, mujeres, América Latina, desarrollo profesional, Fondo de Becas",
 
   "nav.mission": "Nuestra misión",
   "nav.impact": "Impacto",
@@ -26,6 +31,10 @@ const es = {
   "lang.es": "ES",
   "lang.en": "EN",
   "logo.alt": "Laboratoria",
+  "img.hero.alt": "Mujeres reunidas en un evento de la comunidad Laboratoria",
+  "img.community.alt": "Mentora y participante de Laboratoria trabajando juntas",
+  "img.gabriela.alt": "Retrato de Gabriela Luna, egresada de Laboratoria",
+  "img.celebration.alt": "Egresadas de Laboratoria celebrando juntas",
 
   "hero.title": "Nadie hace esto sola.",
   "hero.body":
@@ -132,6 +141,11 @@ const en: { [K in keyof typeof es]: string } = {
   "meta.title": "Laboratoria Scholarship Fund — Nobody does this alone.",
   "meta.description":
     "The most underrated career tool isn't a skill, it's a community that sees what you're capable of. At Laboratoria, that's where it starts.",
+  "meta.ogImageAlt":
+    "Women from the Laboratoria community gathered at an event",
+  "meta.siteName": "Laboratoria Scholarship Fund",
+  "meta.keywords":
+    "Laboratoria, scholarships, donations, women, Latin America, professional development, Scholarship Fund",
 
   "nav.mission": "Our mission",
   "nav.impact": "Impact",
@@ -147,6 +161,10 @@ const en: { [K in keyof typeof es]: string } = {
   "lang.es": "ES",
   "lang.en": "EN",
   "logo.alt": "Laboratoria",
+  "img.hero.alt": "Women gathered at a Laboratoria community event",
+  "img.community.alt": "Laboratoria mentor and participant working together",
+  "img.gabriela.alt": "Portrait of Gabriela Luna, Laboratoria graduate",
+  "img.celebration.alt": "Laboratoria graduates celebrating together",
 
   "hero.title": "Nobody does this alone.",
   "hero.body":
