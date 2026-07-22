@@ -139,7 +139,7 @@ const es = {
   "footer.tagline":
     "Mujeres construyendo carreras profesionales en toda América Latina.",
   "footer.about": "Nosotras",
-  "footer.contact": "Contacto",
+  "footer.knowUs": "Conócenos",
   "footer.privacy": "Privacidad",
 } as const;
 
@@ -272,7 +272,7 @@ const en: { [K in keyof typeof es]: string } = {
 
   "footer.tagline": "Women building careers across Latin America.",
   "footer.about": "About",
-  "footer.contact": "Contact",
+  "footer.knowUs": "Get to know us",
   "footer.privacy": "Privacy",
 };
 

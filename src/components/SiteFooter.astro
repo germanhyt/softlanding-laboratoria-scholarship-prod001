@@ -14,15 +14,21 @@ const t = useTranslations(lang);
     class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
   >
     <div>
-      <div class="text-2xl font-bold tracking-tight">&lt;Laboratoria&gt;</div>
-      <p class="text-sm text-brand-ink/70 mt-1">{t("footer.tagline")}</p>
+      <img
+        src="/images/logo-laboratoria-black.png"
+        alt={t("logo.alt")}
+        class="h-7 w-auto md:h-8"
+        width="1223"
+        height="148"
+      />
+      <p class="text-sm text-brand-ink/70 mt-2">{t("footer.tagline")}</p>
     </div>
     <nav class="flex gap-6 text-sm">
-      <a href="https://www.laboratoria.la" class="hover:text-brand-magenta"
+      <a href="https://laboratoria.la/" class="hover:text-brand-magenta"
         >{t("footer.about")}</a
       >
-      <a href="https://www.laboratoria.la" class="hover:text-brand-magenta"
-        >{t("footer.contact")}</a
+      <a href="https://laboratoria.la/" class="hover:text-brand-magenta"
+        >{t("footer.knowUs")}</a
       >
       <a href="https://www.laboratoria.la" class="hover:text-brand-magenta"
         >{t("footer.privacy")}</a

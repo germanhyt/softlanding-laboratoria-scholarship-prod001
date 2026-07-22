@@ -61,11 +61,11 @@ export default function SiteHeader({
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5 md:gap-6 md:py-6">
         <a href="#top" className="relative z-[60] shrink-0" onClick={close}>
           <img
-            src="/images/logo-laboratoria.png"
+            src="/images/logo-laboratoria-white.png"
             alt={logoAlt}
-            className="h-7 w-auto md:h-8 mix-blend-screen"
-            width={400}
-            height={49}
+            className="h-7 w-auto md:h-8"
+            width={1223}
+            height={148}
           />
         </a>
 
