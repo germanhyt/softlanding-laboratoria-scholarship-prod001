@@ -86,9 +86,9 @@ export default function SiteHeader({
             ))}
           </nav>
 
-          {/* Language toggle */}
+          {/* Language toggle — from sm up (stays in top bar) */}
           <div
-            className="lang-toggle inline-flex items-center rounded-full border border-white/25 bg-white/5 p-0.5 text-xs font-semibold tracking-wide text-white backdrop-blur-sm"
+            className="lang-toggle hidden sm:inline-flex items-center rounded-full border border-white/25 bg-white/5 p-0.5 text-xs font-semibold tracking-wide text-white backdrop-blur-sm"
             role="group"
             aria-label={langSwitchLabel}
           >
@@ -175,29 +175,36 @@ export default function SiteHeader({
             </a>
           ))}
 
+          {/* Language toggle — only below sm, under menu items */}
           <div
-            className="header-mobile-link mt-8 inline-flex w-fit items-center rounded-full border border-white/20 p-0.5 text-sm font-semibold"
-            style={{ transitionDelay: open ? `${120 + items.length * 50}ms` : "0ms" }}
+            className="header-mobile-link mt-8 inline-flex sm:hidden w-fit items-center rounded-full border border-white/20 bg-white/5 p-0.5 text-sm font-semibold"
+            role="group"
+            aria-label={langSwitchLabel}
+            style={{
+              transitionDelay: open ? `${120 + items.length * 50}ms` : "0ms",
+            }}
           >
             <a
               href={hrefEs}
               hrefLang="es"
-              className={`rounded-full px-4 py-2 ${
+              className={`rounded-full px-4 py-2 transition ${
                 lang === "es"
                   ? "bg-brand-yellow text-brand-ink"
                   : "text-white/80"
               }`}
+              aria-current={lang === "es" ? "page" : undefined}
             >
               {labelEs}
             </a>
             <a
               href={hrefEn}
               hrefLang="en"
-              className={`rounded-full px-4 py-2 ${
+              className={`rounded-full px-4 py-2 transition ${
                 lang === "en"
                   ? "bg-brand-yellow text-brand-ink"
                   : "text-white/80"
               }`}
+              aria-current={lang === "en" ? "page" : undefined}
             >
               {labelEn}
             </a>
