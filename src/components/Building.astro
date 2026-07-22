@@ -1,4 +1,5 @@
 ---
+import ImpactStats from "./ImpactStats.tsx";
 import { useTranslations, type Lang } from "../i18n/utils";
 
 interface Props {
@@ -7,6 +8,27 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const metrics = [
+  {
+    end: Number(t("building.metric1.end")),
+    prefix: t("building.metric1.prefix") || undefined,
+    suffix: t("building.metric1.suffix") || undefined,
+    label: t("building.metric1.label"),
+  },
+  {
+    end: Number(t("building.metric2.end")),
+    prefix: t("building.metric2.prefix") || undefined,
+    suffix: t("building.metric2.suffix") || undefined,
+    label: t("building.metric2.label"),
+  },
+  {
+    end: Number(t("building.metric3.end")),
+    prefix: t("building.metric3.prefix") || undefined,
+    suffix: t("building.metric3.suffix") || undefined,
+    label: t("building.metric3.label"),
+  },
+];
 ---
 
 <section id="impacto" class="bg-white py-24 px-6 scroll-mt-24">
@@ -31,26 +53,5 @@ const t = useTranslations(lang);
       loading="lazy"
     />
   </div>
-  <div
-    class="max-w-6xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-center"
-  >
-    <div data-reveal style="--reveal-delay: 0ms">
-      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">
-        {t("building.metric1.value")}
-      </div>
-      <div class="mt-2 text-base font-medium">{t("building.metric1.label")}</div>
-    </div>
-    <div data-reveal style="--reveal-delay: 120ms">
-      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">
-        {t("building.metric2.value")}
-      </div>
-      <div class="mt-2 text-base font-medium">{t("building.metric2.label")}</div>
-    </div>
-    <div data-reveal style="--reveal-delay: 240ms">
-      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">
-        {t("building.metric3.value")}
-      </div>
-      <div class="mt-2 text-base font-medium">{t("building.metric3.label")}</div>
-    </div>
-  </div>
+  <ImpactStats client:visible metrics={metrics} />
 </section>
