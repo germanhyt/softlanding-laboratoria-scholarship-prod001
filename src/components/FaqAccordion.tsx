@@ -32,7 +32,11 @@ export default function FaqAccordion({ items }: Props) {
   const baseId = useId();
 
   return (
-    <section className="bg-white py-24 px-6" data-reveal>
+    <section
+      id="faq"
+      className="scroll-mt-24 bg-white py-24 px-6"
+      data-reveal
+    >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-5xl font-bold text-center">
           Questions, answered.

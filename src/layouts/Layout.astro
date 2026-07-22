@@ -1,19 +1,22 @@
 ---
 import "../styles/global.css";
+import type { Lang } from "../i18n/ui";
 
 interface Props {
   title?: string;
   description?: string;
+  lang?: Lang;
 }
 
 const {
   title = "Laboratoria Scholarship Fund — Nobody does this alone.",
   description = "The most underrated career tool isn't a skill — it's a community that sees what you're capable of. At Laboratoria, that's where it starts.",
+  lang = "es",
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,6 +29,8 @@ const {
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" hreflang="es" href="/" />
+    <link rel="alternate" hreflang="en" href="/en/" />
     <title>{title}</title>
   </head>
   <body id="top">

@@ -1,0 +1,38 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import SiteHeader from "./SiteHeader.tsx";
+import { navHrefs } from "../i18n/ui";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const items = [
+  { label: t("nav.mission"), href: navHrefs.mission },
+  { label: t("nav.impact"), href: navHrefs.impact },
+  { label: t("nav.donations"), href: navHrefs.donations },
+  { label: t("nav.stories"), href: navHrefs.stories },
+  { label: t("nav.faq"), href: navHrefs.faq },
+];
+---
+
+<SiteHeader
+  client:load
+  lang={lang}
+  logoAlt={t("logo.alt")}
+  navAria={t("nav.aria")}
+  navAriaMobile={t("nav.ariaMobile")}
+  openLabel={t("nav.open")}
+  closeLabel={t("nav.close")}
+  menuLabel={t("nav.menu")}
+  langSwitchLabel={t("lang.switch")}
+  labelEs={t("lang.es")}
+  labelEn={t("lang.en")}
+  hrefEs={getRelativeLocaleUrl("es")}
+  hrefEn={getRelativeLocaleUrl("en")}
+  items={items}
+/>

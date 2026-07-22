@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Problem from "../components/Problem.astro";
+import Building from "../components/Building.astro";
+import GiftTiers from "../components/GiftTiers.astro";
+import ImpactWays from "../components/ImpactWays.astro";
+import CohortUpdates from "../components/CohortUpdates.astro";
+import MeetGabriela from "../components/MeetGabriela.astro";
+import FaqAccordion from "../components/FaqAccordion.tsx";
+import FinalCta from "../components/FinalCta.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import RevealInit from "../components/RevealInit.astro";
+import { faqItems } from "../data/faq";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<Layout lang={lang}>
+  <Header lang={lang} />
+  <main>
+    <Hero />
+    <Problem />
+    <Building />
+    <GiftTiers />
+    <ImpactWays />
+    <CohortUpdates />
+    <MeetGabriela />
+    <FaqAccordion client:load items={faqItems} />
+    <FinalCta />
+  </main>
+  <SiteFooter />
+  <RevealInit />
+</Layout>
