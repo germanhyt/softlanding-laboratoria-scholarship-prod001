@@ -1,10 +1,21 @@
+---
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
 <section id="historias" class="bg-brand-gray py-24 px-6 scroll-mt-24">
   <div
     class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-start"
   >
     <img
       src="/images/photo-gabriela.jpg"
-      alt="Portrait of Gabriela Luna"
+      alt=""
       class="w-full rounded-2xl object-cover aspect-[4/5]"
       data-reveal="left"
     />
@@ -12,39 +23,22 @@
       <div
         class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-magenta"
       >
-        From the community
+        {t("gabriela.label")}
       </div>
-      <h2 class="mt-3 text-3xl md:text-5xl font-bold">Meet Gabriela.</h2>
+      <h2 class="mt-3 text-3xl md:text-5xl font-bold">{t("gabriela.title")}</h2>
       <div class="mt-6 space-y-4 text-lg leading-relaxed">
-        <p>
-          For many years, I taught languages, but there came a point when I
-          said: I can't keep doing this.
-        </p>
-        <p>
-          Making such a big change feels like vertigo. I lacked confidence and
-          struggled to recognize how my abilities could transfer into a
-          different field. It felt like I had lost my voice. That's when I found
-          Laboratoria.
-        </p>
-        <p>
-          The first thing I came across was a community where I felt safe.
-          Little by little, I started rebuilding my confidence — learning
-          practical tools like how to improve my CV, use AI, prepare for
-          interviews.
-        </p>
-        <p>
-          Today, I feel capable of walking into a room and speaking up, making
-          myself visible, and becoming the protagonist of my own life.
-        </p>
+        <p>{t("gabriela.p1")}</p>
+        <p>{t("gabriela.p2")}</p>
+        <p>{t("gabriela.p3")}</p>
+        <p>{t("gabriela.p4")}</p>
       </div>
       <div class="mt-8">
         <blockquote class="border-l-4 border-brand-magenta pl-5 py-2 text-left">
           <p class="text-lg md:text-xl italic leading-relaxed">
-            "When you recover your voice, the opportunities you see change — and
-            so do the ones you dare to go after."
+            {t("gabriela.quote")}
           </p>
           <footer class="mt-3 text-sm opacity-80 not-italic">
-            — Gabriela Luna, Laboratoria graduate
+            {t("gabriela.attribution")}
           </footer>
         </blockquote>
       </div>

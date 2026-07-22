@@ -1,5 +1,13 @@
 ---
 import { DONATE_URL } from "../data/faq";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section
@@ -7,7 +15,7 @@ import { DONATE_URL } from "../data/faq";
 >
   <img
     src="/images/photo-hero.jpg"
-    alt="Women gathered at a Laboratoria community event"
+    alt=""
     class="hero-media absolute inset-0 h-full w-full object-cover"
     data-reveal="scale"
     style="--reveal-delay: 0ms"
@@ -19,15 +27,14 @@ import { DONATE_URL } from "../data/faq";
       data-reveal
       style="--reveal-delay: 120ms"
     >
-      Nobody does this alone.
+      {t("hero.title")}
     </h1>
     <p
       class="mt-6 text-lg md:text-xl leading-relaxed opacity-95"
       data-reveal
       style="--reveal-delay: 260ms"
     >
-      The most underrated career tool isn't a skill — it's a community that sees
-      what you're capable of. At Laboratoria, that's where it starts.
+      {t("hero.body")}
     </p>
     <div
       class="mt-10 mx-auto max-w-2xl"
@@ -36,11 +43,10 @@ import { DONATE_URL } from "../data/faq";
     >
       <blockquote class="border-l-4 border-brand-magenta pl-5 py-2 text-left">
         <p class="text-lg md:text-xl italic leading-relaxed">
-          "When you recover your voice, the opportunities you see change — and so
-          do the ones you dare to go after."
+          {t("hero.quote")}
         </p>
         <footer class="mt-3 text-sm opacity-80 not-italic">
-          — Gabriela Luna, Laboratoria graduate
+          {t("hero.attribution")}
         </footer>
       </blockquote>
     </div>
@@ -51,7 +57,7 @@ import { DONATE_URL } from "../data/faq";
         rel="noopener noreferrer"
         class="btn-cta inline-flex items-center justify-center rounded-full bg-brand-yellow text-brand-ink font-semibold px-10 py-5 text-lg"
       >
-        Support a woman's career
+        {t("hero.cta")}
       </a>
     </div>
   </div>

@@ -1,19 +1,25 @@
+---
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
 <section id="mision" class="bg-brand-ink text-white py-24 px-6 scroll-mt-24">
   <div class="max-w-4xl mx-auto">
-    <h2
-      class="text-3xl md:text-5xl font-bold leading-tight"
-      data-reveal
-    >
-      48 million women in Latin America are locked out of formal work.
+    <h2 class="text-3xl md:text-5xl font-bold leading-tight" data-reveal>
+      {t("problem.title")}
     </h2>
     <p
       class="mt-8 text-lg md:text-xl leading-relaxed opacity-90"
       data-reveal
       style="--reveal-delay: 120ms"
     >
-      As AI reshapes the economy, these women face automation at 3x the rate of
-      men, without the networks, skills, or confidence to adapt. The gap isn't
-      ability. It's access.
+      {t("problem.body")}
     </p>
   </div>
 </section>

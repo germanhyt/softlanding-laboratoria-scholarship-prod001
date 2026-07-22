@@ -1,25 +1,30 @@
+---
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
 <section id="impacto" class="bg-white py-24 px-6 scroll-mt-24">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
     <div data-reveal="left">
       <h2 class="text-3xl md:text-5xl font-bold leading-tight">
-        This is what we're building together.
+        {t("building.title")}
       </h2>
       <p class="mt-6 text-lg leading-relaxed">
-        Laboratoria is Latin America's leading professional development program
-        for women. We combine real skills, honest coaching, and a community of
-        peers and mentors who actually show up — because getting a better job
-        isn't just about what you know. It's about who's in your corner when you
-        doubt yourself, when the interview goes sideways, when you're the only
-        woman in the room.
+        {t("building.body")}
       </p>
       <p class="mt-4 text-lg leading-relaxed">
-        Your donation keeps that experience within reach for the women who need
-        it most.
+        {t("building.support")}
       </p>
     </div>
     <img
       src="/images/photo-community.jpg"
-      alt="Laboratoria mentor and participant working together"
+      alt=""
       class="w-full rounded-2xl object-cover aspect-[4/5]"
       data-reveal="right"
       style="--reveal-delay: 140ms"
@@ -29,16 +34,22 @@
     class="max-w-6xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-center"
   >
     <div data-reveal style="--reveal-delay: 0ms">
-      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">10,000+</div>
-      <div class="mt-2 text-base font-medium">women served</div>
+      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">
+        {t("building.metric1.value")}
+      </div>
+      <div class="mt-2 text-base font-medium">{t("building.metric1.label")}</div>
     </div>
     <div data-reveal style="--reveal-delay: 120ms">
-      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">73%</div>
-      <div class="mt-2 text-base font-medium">placed in better jobs</div>
+      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">
+        {t("building.metric2.value")}
+      </div>
+      <div class="mt-2 text-base font-medium">{t("building.metric2.label")}</div>
     </div>
     <div data-reveal style="--reveal-delay: 240ms">
-      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">3x</div>
-      <div class="mt-2 text-base font-medium">average income increase</div>
+      <div class="text-5xl md:text-6xl font-bold text-brand-magenta">
+        {t("building.metric3.value")}
+      </div>
+      <div class="mt-2 text-base font-medium">{t("building.metric3.label")}</div>
     </div>
   </div>
 </section>

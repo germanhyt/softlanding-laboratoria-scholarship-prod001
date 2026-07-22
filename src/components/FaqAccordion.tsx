@@ -3,6 +3,7 @@ import type { FaqItem } from "../data/faq";
 
 type Props = {
   items: FaqItem[];
+  title: string;
 };
 
 function Chevron({ open }: { open: boolean }) {
@@ -27,7 +28,7 @@ function Chevron({ open }: { open: boolean }) {
   );
 }
 
-export default function FaqAccordion({ items }: Props) {
+export default function FaqAccordion({ items, title }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const baseId = useId();
 
@@ -39,7 +40,7 @@ export default function FaqAccordion({ items }: Props) {
     >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-5xl font-bold text-center">
-          Questions, answered.
+          {title}
         </h2>
         <div className="mt-10">
           {items.map((item, index) => {

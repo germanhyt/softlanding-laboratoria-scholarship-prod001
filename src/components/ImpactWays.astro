@@ -1,7 +1,18 @@
+---
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
 <section class="bg-brand-ink text-white py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl md:text-5xl font-bold text-center" data-reveal>
-      More ways to make an impact.
+      {t("impact.title")}
     </h2>
     <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
       <div
@@ -34,10 +45,8 @@
           </svg>
         </div>
         <div>
-          <h3 class="text-xl font-semibold">Honor someone</h3>
-          <p class="mt-2 opacity-90">
-            Make a gift in the name of a woman who shaped your career.
-          </p>
+          <h3 class="text-xl font-semibold">{t("impact.option1.title")}</h3>
+          <p class="mt-2 opacity-90">{t("impact.option1.body")}</p>
         </div>
       </div>
       <div
@@ -71,11 +80,8 @@
           </svg>
         </div>
         <div>
-          <h3 class="text-xl font-semibold">Start a fundraiser</h3>
-          <p class="mt-2 opacity-90">
-            Launch an online campaign, start a giving circle, or host a
-            gathering. We'll help you make it happen.
-          </p>
+          <h3 class="text-xl font-semibold">{t("impact.option2.title")}</h3>
+          <p class="mt-2 opacity-90">{t("impact.option2.body")}</p>
         </div>
       </div>
     </div>

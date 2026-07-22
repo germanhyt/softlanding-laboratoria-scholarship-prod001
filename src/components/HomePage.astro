@@ -12,29 +12,31 @@ import FaqAccordion from "../components/FaqAccordion.tsx";
 import FinalCta from "../components/FinalCta.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import RevealInit from "../components/RevealInit.astro";
-import { faqItems } from "../data/faq";
-import type { Lang } from "../i18n/ui";
+import { getFaqItems } from "../data/faq";
+import { useTranslations, type Lang } from "../i18n/utils";
 
 interface Props {
   lang: Lang;
 }
 
 const { lang } = Astro.props;
+const t = useTranslations(lang);
+const faqItems = getFaqItems(lang);
 ---
 
-<Layout lang={lang}>
+<Layout lang={lang} title={t("meta.title")} description={t("meta.description")}>
   <Header lang={lang} />
   <main>
-    <Hero />
-    <Problem />
-    <Building />
-    <GiftTiers />
-    <ImpactWays />
-    <CohortUpdates />
-    <MeetGabriela />
-    <FaqAccordion client:load items={faqItems} />
-    <FinalCta />
+    <Hero lang={lang} />
+    <Problem lang={lang} />
+    <Building lang={lang} />
+    <GiftTiers lang={lang} />
+    <ImpactWays lang={lang} />
+    <CohortUpdates lang={lang} />
+    <MeetGabriela lang={lang} />
+    <FaqAccordion client:load items={faqItems} title={t("faq.title")} />
+    <FinalCta lang={lang} />
   </main>
-  <SiteFooter />
+  <SiteFooter lang={lang} />
   <RevealInit />
 </Layout>

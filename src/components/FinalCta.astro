@@ -1,11 +1,19 @@
 ---
 import { DONATE_URL } from "../data/faq";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section class="relative py-28 px-6 text-white overflow-hidden">
   <img
     src="/images/photo-celebration.jpg"
-    alt="Laboratoria graduates celebrating together"
+    alt=""
     class="absolute inset-0 h-full w-full object-cover"
     data-reveal="scale"
   />
@@ -16,14 +24,14 @@ import { DONATE_URL } from "../data/faq";
       data-reveal
       style="--reveal-delay: 80ms"
     >
-      Nobody does this alone. Not them. Not us.
+      {t("final.title")}
     </h2>
     <p
       class="mt-6 text-lg md:text-xl opacity-95"
       data-reveal
       style="--reveal-delay: 180ms"
     >
-      Join the community making it possible.
+      {t("final.body")}
     </p>
     <div class="mt-10" data-reveal style="--reveal-delay: 280ms">
       <a
@@ -32,7 +40,7 @@ import { DONATE_URL } from "../data/faq";
         rel="noopener noreferrer"
         class="btn-cta inline-flex items-center justify-center rounded-full bg-brand-yellow text-brand-ink font-semibold px-10 py-5 text-lg"
       >
-        Support a scholarship
+        {t("final.cta")}
       </a>
     </div>
     <div class="mt-6" data-reveal style="--reveal-delay: 360ms">
@@ -40,7 +48,7 @@ import { DONATE_URL } from "../data/faq";
         href="#top"
         class="text-sm underline opacity-90 hover:opacity-100 transition-opacity"
       >
-        Other ways to give ↑
+        {t("final.secondary")}
       </a>
     </div>
   </div>
