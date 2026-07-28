@@ -7,46 +7,126 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const cards = [
+  {
+    title: t("cohort.card1.title"),
+    body: t("cohort.card1.body"),
+    icon: "book",
+    delay: "60ms",
+  },
+  {
+    title: t("cohort.card2.title"),
+    body: t("cohort.card2.body"),
+    icon: "briefcase",
+    delay: "140ms",
+  },
+  {
+    title: t("cohort.card3.title"),
+    body: t("cohort.card3.body"),
+    icon: "building",
+    delay: "220ms",
+  },
+] as const;
 ---
 
 <section class="bg-white py-24 px-6">
   <div class="max-w-5xl mx-auto">
     <div class="text-center" data-reveal>
       <div
-        class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-magenta"
+        class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-ink/60"
       >
         {t("cohort.label")}
       </div>
-      <h2 class="mt-3 text-3xl md:text-5xl font-bold">{t("cohort.title")}</h2>
+      <h2
+        class="mt-3 text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight"
+      >
+        {t("cohort.titleLead")}
+        <span class="text-brand-magenta"> {t("cohort.titleAccent")}</span>
+      </h2>
     </div>
     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
-      <div
-        class="rounded-2xl border border-black/10 p-6"
-        data-reveal
-        style="--reveal-delay: 60ms"
-      >
-        <div class="text-3xl">📚</div>
-        <p class="mt-3 leading-relaxed">{t("cohort.update1")}</p>
-      </div>
-      <div
-        class="rounded-2xl border border-black/10 p-6"
-        data-reveal
-        style="--reveal-delay: 140ms"
-      >
-        <div class="text-3xl">💼</div>
-        <p class="mt-3 leading-relaxed">{t("cohort.update2")}</p>
-      </div>
-      <div
-        class="rounded-2xl border border-black/10 p-6"
-        data-reveal
-        style="--reveal-delay: 220ms"
-      >
-        <div class="text-3xl">🤝</div>
-        <p class="mt-3 leading-relaxed">{t("cohort.update3")}</p>
-      </div>
+      {
+        cards.map((card) => (
+          <div
+            class="rounded-2xl border border-black/10 p-6"
+            data-reveal
+            style={`--reveal-delay: ${card.delay}`}
+          >
+            <div
+              class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-magenta text-white"
+              aria-hidden="true"
+            >
+              {card.icon === "book" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 7v14" />
+                  <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                </svg>
+              )}
+              {card.icon === "briefcase" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  <rect width="20" height="14" x="2" y="6" rx="2" />
+                </svg>
+              )}
+              {card.icon === "building" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+                  <path d="M9 22v-4h6v4" />
+                  <path d="M8 6h.01" />
+                  <path d="M16 6h.01" />
+                  <path d="M12 6h.01" />
+                  <path d="M12 10h.01" />
+                  <path d="M12 14h.01" />
+                  <path d="M16 10h.01" />
+                  <path d="M16 14h.01" />
+                  <path d="M8 10h.01" />
+                  <path d="M8 14h.01" />
+                </svg>
+              )}
+            </div>
+            <h3 class="mt-4 text-sm font-bold uppercase tracking-wide text-brand-ink">
+              {card.title}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-brand-ink/80">
+              {card.body}
+            </p>
+          </div>
+        ))
+      }
     </div>
     <p
-      class="mt-6 text-center italic text-sm text-brand-ink/60"
+      class="mt-8 text-center italic text-sm text-brand-ink/60"
       data-reveal
       style="--reveal-delay: 280ms"
     >

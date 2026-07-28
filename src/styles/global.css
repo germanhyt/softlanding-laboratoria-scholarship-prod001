@@ -79,14 +79,26 @@ body {
   transform: none;
 }
 
-/* Hero ken burns (subtle) */
+/* Hero — zoom-out cover (no gaps) + subtle ken burns */
+.hero-media-wrap {
+  overflow: hidden;
+}
+
 .hero-media {
-  transform: scale(1.06);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 118%;
+  height: 118%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 42%;
+  transform: translate(-50%, -50%) scale(1.04);
   transition: transform 8s var(--ease-out-expo);
 }
 
 .hero-media.is-revealed {
-  transform: scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .sr-only {
@@ -130,13 +142,17 @@ body {
   }
 
   [data-reveal],
-  .hero-media,
   .btn-cta {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     filter: none !important;
     box-shadow: none !important;
+  }
+
+  .hero-media {
+    transform: translate(-50%, -50%) !important;
+    transition: none !important;
   }
 
   .header-mobile-panel,

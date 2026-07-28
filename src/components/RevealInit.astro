@@ -58,6 +58,26 @@
     });
   }
 
+  function initHeroMedia() {
+    const hero = document.querySelector(".hero-media");
+    if (!hero) return;
+
+    if (prefersReducedMotion()) {
+      hero.classList.add("is-revealed");
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        hero.classList.add("is-revealed");
+      });
+    });
+  }
+
   initReveals();
-  document.addEventListener("astro:page-load", initReveals);
+  initHeroMedia();
+  document.addEventListener("astro:page-load", () => {
+    initReveals();
+    initHeroMedia();
+  });
 </script>

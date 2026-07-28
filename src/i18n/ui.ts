@@ -81,20 +81,24 @@ const es = {
   "impact.title": "Más formas de generar un impacto.",
   "impact.option1.title": "Haz una donación en honor a alguien",
   "impact.option1.body":
-    "Haz una donación en nombre de una mujer que marcó tu carrera.",
+    "Haz una donación en nombre de alguien que marcó tu carrera.",
   "impact.option2.title": "Inicia una campaña de recaudación",
   "impact.option2.body":
     "Lanza una campaña en línea, crea un círculo de donación u organiza un encuentro. Te ayudaremos a hacerlo realidad.",
 
   "cohort.label": "Últimas novedades del Fondo",
-  "cohort.title": "Novedades de la cohorte.",
-  "cohort.update1":
-    "Junio de 2026 — Una nueva cohorte de 32 mujeres acaba de comenzar en Ciudad de México.",
-  "cohort.update2":
-    "Abril de 2026 — Seis egresadas de la cohorte de marzo comenzaron nuevos puestos de trabajo.",
-  "cohort.update3":
-    "Marzo de 2026 — Nuestra comunidad ahora cuenta con más de 1,500 empresas aliadas que contratan talento.",
-  "cohort.footer": "Actualizaciones publicadas en cada ciclo de la cohorte.",
+  "cohort.titleLead": "En vivo desde",
+  "cohort.titleAccent": "la cohorte",
+  "cohort.card1.title": "Nuevas cohortes comienzan",
+  "cohort.card1.body":
+    "Nuestra convocatoria de admisiones está abierta para nuestra próxima cohorte en Brasil, que inicia en agosto de 2026.",
+  "cohort.card2.title": "Las egresadas inician nuevos roles",
+  "cohort.card2.body":
+    "El 40% de nuestra primera cohorte ya tiene un empleo nuevo o mejor.",
+  "cohort.card3.title": "El aprendizaje no se detiene",
+  "cohort.card3.body":
+    "18 egresadas completaron recientemente la certificación Microsoft AI for Business Professional.",
+  "cohort.footer": "*Actualizaciones publicadas en cada ciclo de la cohorte.*",
 
   "gabriela.label": "Desde la comunidad",
   "gabriela.title": "Conoce a Gabriela.",
@@ -215,20 +219,24 @@ const en: { [K in keyof typeof es]: string } = {
   "impact.title": "More ways to make an impact.",
   "impact.option1.title": "Honor someone",
   "impact.option1.body":
-    "Make a gift in the name of a woman who shaped your career.",
+    "Make a gift in the name of someone who shaped your career.",
   "impact.option2.title": "Start a fundraiser",
   "impact.option2.body":
     "Launch an online campaign, start a giving circle, or host a gathering. We'll help you make it happen.",
 
   "cohort.label": "Latest from the Fund",
-  "cohort.title": "Live from the cohort.",
-  "cohort.update1":
-    "June 2026 — A new cohort of 32 women just started in Mexico City.",
-  "cohort.update2":
-    "April 2026 — 6 graduates from the March cohort have started new roles.",
-  "cohort.update3":
-    "March 2026 — Our community now includes 1,500+ hiring partners.",
-  "cohort.footer": "Updates posted each cohort cycle.",
+  "cohort.titleLead": "Live from",
+  "cohort.titleAccent": "the cohort",
+  "cohort.card1.title": "New cohorts begin",
+  "cohort.card1.body":
+    "Our call for admissions is open for our next Brazil cohort, starting August 2026.",
+  "cohort.card2.title": "Graduates start new roles",
+  "cohort.card2.body":
+    "40% of our first cohort are now in new or better jobs.",
+  "cohort.card3.title": "Learning never stops",
+  "cohort.card3.body":
+    "18 graduates recently completed the Microsoft AI for Business Professional certification.",
+  "cohort.footer": "*Updates posted each cohort cycle.*",
 
   "gabriela.label": "From the community",
   "gabriela.title": "Meet Gabriela.",
