@@ -47,6 +47,38 @@ body {
   transform: translateY(0) scale(0.99);
 }
 
+/* Cohort update cards */
+.cohort-card {
+  transition:
+    border-color 0.35s var(--ease-out-expo),
+    box-shadow 0.35s var(--ease-out-expo),
+    background-color 0.35s var(--ease-out-expo);
+}
+
+.cohort-card-icon {
+  transition: transform 0.35s var(--ease-out-expo);
+}
+
+[data-reveal].is-revealed.cohort-card {
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.35s var(--ease-out-expo),
+    border-color 0.35s var(--ease-out-expo),
+    box-shadow 0.35s var(--ease-out-expo),
+    background-color 0.35s var(--ease-out-expo);
+}
+
+[data-reveal].is-revealed.cohort-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--color-brand-magenta) 40%, transparent);
+  background-color: color-mix(in srgb, var(--color-brand-magenta) 4%, white);
+  box-shadow: 0 16px 40px -20px rgb(14 29 37 / 0.18);
+}
+
+[data-reveal].is-revealed.cohort-card:hover .cohort-card-icon {
+  transform: scale(1.08);
+}
+
 /* Scroll / load reveals */
 [data-reveal] {
   opacity: 0;
@@ -142,7 +174,9 @@ body {
   }
 
   [data-reveal],
-  .btn-cta {
+  .btn-cta,
+  .cohort-card,
+  .cohort-card-icon {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
