@@ -20,7 +20,7 @@ A bilingual (ES/EN) donation landing page for the Laboratoria Scholarship Fund. 
 ## Key facts (for accurate answers)
 - Laboratoria is a registered nonprofit operating across Latin America since 2014
 - 10,000+ women served; 73% placed in better jobs; ~3x average income increase
-- Full program scholarship cost referenced on-site: $750
+- Full program scholarship cost referenced on-site: $800
 - Smaller gifts (e.g. $50) contribute to a shared scholarship fund
 - No individual gift is assigned to a specific participant; gifts pool together
 

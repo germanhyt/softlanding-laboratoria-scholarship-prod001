@@ -71,7 +71,7 @@ const es = {
   "gift.tier1.amount": "$50",
   "gift.tier1.body":
     "Ayuda a cubrir los costos del programa: acompañamiento, herramientas impulsadas por IA y comunidad.",
-  "gift.tier2.amount": "$750",
+  "gift.tier2.amount": "$800",
   "gift.tier2.body":
     "El costo real de la experiencia completa del programa para una mujer. Financia una beca completa del programa por tu cuenta o únete a otras personas para hacerlo posible.",
   "gift.support":
@@ -115,9 +115,6 @@ const es = {
   "gabriela.attribution": "— Gabriela Luna, egresada de Laboratoria",
 
   "faq.title": "Preguntas frecuentes.",
-  "faq.q1": "¿A dónde va mi donación?",
-  "faq.a1":
-    "Directamente a financiar el acceso a becas para las mujeres que lo necesitan. Laboratoria cubre el costo operativo de cada programa; tu donación cierra la brecha entre lo que las participantes pueden pagar y el costo real de ofrecer el programa.",
   "faq.q2": "¿Laboratoria es una organización sin fines de lucro registrada?",
   "faq.a2":
     "Sí. Laboratoria es una organización sin fines de lucro registrada que opera en América Latina desde 2014.",
@@ -135,7 +132,7 @@ const es = {
   "faq.a6":
     "Es un fondo compartido que cubre el costo del programa de Laboratoria para mujeres que, de otro modo, no podrían acceder a él. Incluye acompañamiento, herramientas impulsadas por IA y la comunidad que las acompaña durante todo el proceso. Cada donación se integra a este fondo compartido. Ninguna donación se asigna a una mujer en particular; en cambio, tu aporte se suma al de otras personas para financiar experiencias completas del programa, de manera conjunta. Es la misma idea que inspira todo lo que hacemos: nadie llega lejos sola.",
 
-  "final.title": "Nadie hace esto sola. Ni ellas. Ni nosotros.",
+  "final.title": "Nadie hace esto sola.",
   "final.body": "Únete a la comunidad que lo hace posible.",
   "final.cta": "Apoya una beca",
   "final.secondary": "Otras formas de donar ↑",
@@ -209,7 +206,7 @@ const en: { [K in keyof typeof es]: string } = {
   "gift.tier1.amount": "$50",
   "gift.tier1.body":
     "Helps cover program costs: coaching, AI-powered tools, community.",
-  "gift.tier2.amount": "$750",
+  "gift.tier2.amount": "$800",
   "gift.tier2.body":
     "The real cost of one woman's complete program experience. Fund a program scholarship alone, or team up with others to get there together.",
   "gift.support":
@@ -253,9 +250,6 @@ const en: { [K in keyof typeof es]: string } = {
   "gabriela.attribution": "— Gabriela Luna, Laboratoria graduate",
 
   "faq.title": "Questions, answered.",
-  "faq.q1": "Where does my donation go?",
-  "faq.a1":
-    "Directly to scholarship access for women who need it. Laboratoria covers the operational cost of each program; your gift closes the gap between what participants can pay and what it costs to deliver.",
   "faq.q2": "Is Laboratoria a registered nonprofit?",
   "faq.a2":
     "Yes. Laboratoria is a registered nonprofit operating across Latin America since 2014.",
@@ -271,7 +265,7 @@ const en: { [K in keyof typeof es]: string } = {
   "faq.a6":
     "It's a shared fund that covers the cost of Laboratoria's program for women who couldn't otherwise afford it, including coaching, AI-powered tools, and the community that gets them through. Every gift goes into that shared pool. No one gift is assigned to a specific woman; instead, your gift joins others to help fund entire program experiences, together. It's the same idea behind everything we do: nobody gets there alone.",
 
-  "final.title": "Nobody does this alone. Not them. Not us.",
+  "final.title": "Nobody does this alone.",
   "final.body": "Join the community making it possible.",
   "final.cta": "Support a scholarship",
   "final.secondary": "Other ways to give ↑",
