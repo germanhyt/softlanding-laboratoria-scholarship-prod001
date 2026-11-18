@@ -3,6 +3,9 @@ import { useTranslations, type Lang } from "../i18n/utils";
 export type FaqItem = {
   question: string;
   answer: string;
+  id?: string;
+  steps?: { lead: string; rest?: string }[];
+  note?: string;
 };
 
 export function getFaqItems(lang: Lang): FaqItem[] {
@@ -17,4 +20,6 @@ export function getFaqItems(lang: Lang): FaqItem[] {
 }
 
 export const DONATE_URL =
-  "https://www.every.org/laboratoria?suggestedAmounts=40%2C100%2C200%2C300&theme_color=EE77F2&method=card%2Cbank%2Cpaypal%2Cpay&utm_campaign=donate-link#/donate/card";
+  "https://www.pledge.to/labo-scholarship-fund?utm_campaign=scholarship-fund&utm_content=hero";
+
+export const PLEDGE_WIDGET_ID = "nUr3k3WpngwqHxxj";

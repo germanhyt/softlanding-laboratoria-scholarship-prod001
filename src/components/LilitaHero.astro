@@ -1,0 +1,78 @@
+---
+import { links, type getLilitaCopy } from "../data/lilita";
+
+interface Props {
+  copy: ReturnType<typeof getLilitaCopy>;
+}
+
+const { copy } = Astro.props;
+const hero = copy.hero;
+---
+
+<section class="relative overflow-hidden bg-brand-cream px-6 text-brand-navy">
+  <div class="mx-auto w-full max-w-[1200px] py-16 md:py-24">
+    <div class="grid items-stretch gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-14">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.18em]" data-reveal>
+          The Lilita Fund
+          <span class="text-xs font-normal normal-case tracking-normal text-brand-navy/80">
+            by &lt;Laboratoria&gt;
+          </span>
+        </p>
+        <h1
+          class="mt-5 font-display text-[44px] font-normal leading-[0.95] sm:text-[52px] lg:text-[80px]"
+          data-reveal
+          style="--reveal-delay: 80ms"
+        >
+          {hero.titleLead}<br />
+          <span class="relative inline-block">
+            {hero.titleAccent.replace(".", "")}
+            <svg
+              aria-hidden="true"
+              class="absolute -bottom-1 left-0 h-[0.16em] w-full"
+              viewBox="0 0 100 12"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M2 8 C 22 3, 55 11, 98 5"
+                fill="none"
+                stroke="var(--color-brand-teal)"
+                stroke-width="6"
+                stroke-linecap="round"></path>
+            </svg>
+          </span>.
+        </h1>
+        <div class="mt-7 max-w-[560px] space-y-5" data-reveal style="--reveal-delay: 160ms">
+          <p class="text-base leading-relaxed md:text-xl">{hero.body}</p>
+          <p class="text-base leading-relaxed md:text-xl">{hero.honor}</p>
+        </div>
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap" data-reveal style="--reveal-delay: 280ms">
+          <a
+            href={links.hero}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand-yellow px-7 py-3 text-center text-base font-semibold text-brand-ink shadow transition-colors hover:bg-brand-yellow/90 sm:w-auto"
+          >
+            {hero.cta}
+          </a>
+          <a
+            href="#lilita"
+            class="inline-flex min-h-12 w-full items-center justify-center rounded-full border-2 border-story-ink bg-transparent px-7 py-3 text-center text-base font-bold text-story-ink transition-colors hover:bg-story-ink/8 sm:w-auto"
+          >
+            {hero.secondary} ↓
+          </a>
+        </div>
+      </div>
+      <div class="relative min-w-0 md:h-full" data-reveal="scale">
+        <img
+          src="/images/lilita/hero-lilita.webp"
+          alt={hero.imageAlt}
+          class="mx-auto w-full max-w-[360px] object-contain md:absolute md:inset-0 md:h-full md:max-w-none"
+          width="1024"
+          height="1024"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,18 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import Problem from "../components/Problem.astro";
-import Building from "../components/Building.astro";
-import GiftTiers from "../components/GiftTiers.astro";
-import ImpactWays from "../components/ImpactWays.astro";
-import CohortUpdates from "../components/CohortUpdates.astro";
-import MeetGabriela from "../components/MeetGabriela.astro";
+import LilitaHero from "../components/LilitaHero.astro";
+import LilitaProgram from "../components/LilitaProgram.astro";
+import StoryRail from "../components/StoryRail.tsx";
+import LilitaWhy from "../components/LilitaWhy.astro";
+import LilitaOrigin from "../components/LilitaOrigin.astro";
+import LilitaGive from "../components/LilitaGive.astro";
 import FaqAccordion from "../components/FaqAccordion.tsx";
-import FinalCta from "../components/FinalCta.astro";
+import LilitaClose from "../components/LilitaClose.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import RevealInit from "../components/RevealInit.astro";
-import { getFaqItems } from "../data/faq";
+import { getLilitaCopy, links } from "../data/lilita";
 import { useTranslations, type Lang } from "../i18n/utils";
 
 interface Props {
@@ -21,26 +20,34 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const faqItems = getFaqItems(lang);
+const copy = getLilitaCopy(lang);
 ---
 
-<Layout
-  lang={lang}
-  title={t("meta.title")}
-  description={t("meta.description")}
-  faqItems={faqItems}
->
+<Layout lang={lang} title={t("meta.title")} description={t("meta.description")} faqItems={copy.faq}>
   <Header lang={lang} />
   <main>
-    <Hero lang={lang} />
-    <Problem lang={lang} />
-    <Building lang={lang} />
-    <GiftTiers lang={lang} />
-    <ImpactWays lang={lang} />
-    <CohortUpdates lang={lang} />
-    <MeetGabriela lang={lang} />
-    <FaqAccordion client:load items={faqItems} title={t("faq.title")} />
-    <FinalCta lang={lang} />
+    <LilitaHero copy={copy} />
+    <LilitaProgram copy={copy} />
+    <StoryRail
+      client:visible
+      title={copy.stories.title}
+      lede={copy.stories.lede}
+      prev={copy.stories.prev}
+      next={copy.stories.next}
+      cta={copy.stories.cta}
+      ctaHref={links.nextStory}
+      readLabel={copy.stories.read}
+      closeLabel={copy.stories.close}
+      playLabel={copy.stories.play}
+      videoName={copy.stories.videoName}
+      videoMeta={copy.stories.videoMeta}
+      items={copy.stories.items}
+    />
+    <LilitaWhy copy={copy} />
+    <LilitaOrigin copy={copy} />
+    <LilitaGive copy={copy} />
+    <FaqAccordion client:visible items={copy.faq} title={copy.faqTitle} />
+    <LilitaClose copy={copy} />
   </main>
   <SiteFooter lang={lang} />
   <RevealInit />

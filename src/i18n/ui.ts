@@ -8,20 +8,21 @@ export type Lang = keyof typeof languages;
 export const defaultLang: Lang = "es";
 
 const es = {
-  "meta.title": "Fondo de Becas Laboratoria — Nadie hace esto sola.",
+  "meta.title": "Lilita Fund — Nadie llega sola",
   "meta.description":
-    "La herramienta más subestimada para impulsar una carrera profesional no es una habilidad, es una comunidad que reconoce todo tu potencial. En Laboratoria, ahí es donde todo comienza.",
+    "Conoce las historias detrás del Lilita Fund y ayuda a mantener accesibles las oportunidades profesionales de las mujeres en América Latina.",
   "meta.ogImageAlt":
     "Mujeres de la comunidad Laboratoria reunidas en un encuentro",
-  "meta.siteName": "Fondo de Becas Laboratoria",
+  "meta.siteName": "Lilita Fund",
   "meta.keywords":
-    "Laboratoria, becas, donaciones, mujeres, América Latina, desarrollo profesional, Fondo de Becas",
+    "Laboratoria, Lilita Fund, becas, donaciones, mujeres, América Latina, Activa tu Carrera",
 
-  "nav.mission": "Nuestra misión",
-  "nav.impact": "Impacto",
-  "nav.donations": "Donaciones",
-  "nav.stories": "Historias",
+  "nav.mission": "Nuestro programa",
+  "nav.impact": "La oportunidad",
+  "nav.donations": "La historia de Lilita",
+  "nav.stories": "Fundadores",
   "nav.faq": "Preguntas frecuentes",
+  "nav.donate": "Dona",
   "nav.aria": "Principal",
   "nav.ariaMobile": "Móvil",
   "nav.open": "Abrir menú",
@@ -137,26 +138,28 @@ const es = {
   "final.cta": "Apoya una beca",
   "final.secondary": "Otras formas de donar ↑",
 
-  "footer.tagline":
-    "Mujeres construyendo carreras profesionales en toda América Latina.",
-  "footer.knowUs": "Conócenos",
+  "footer.tagline": "Mujeres construyendo carreras en América Latina.",
+  "footer.knowUs": "Nosotras",
+  "footer.contact": "Contacto",
+  "footer.privacy": "Privacidad",
 } as const;
 
 const en: { [K in keyof typeof es]: string } = {
-  "meta.title": "Laboratoria Scholarship Fund — Nobody does this alone.",
+  "meta.title": "Lilita Fund — Nobody gets there alone",
   "meta.description":
-    "The most underrated career tool isn't a skill, it's a community that sees what you're capable of. At Laboratoria, that's where it starts.",
+    "Meet the stories behind the Lilita Fund and help keep professional opportunities within reach for women in Latin America.",
   "meta.ogImageAlt":
     "Women from the Laboratoria community gathered at an event",
-  "meta.siteName": "Laboratoria Scholarship Fund",
+  "meta.siteName": "Lilita Fund",
   "meta.keywords":
-    "Laboratoria, scholarships, donations, women, Latin America, professional development, Scholarship Fund",
+    "Laboratoria, Lilita Fund, scholarships, donations, women, Latin America, Activa tu Carrera",
 
-  "nav.mission": "Our mission",
-  "nav.impact": "Impact",
-  "nav.donations": "Donations",
-  "nav.stories": "Stories",
+  "nav.mission": "Our program",
+  "nav.impact": "The opportunity",
+  "nav.donations": "Lilita's story",
+  "nav.stories": "Founders",
   "nav.faq": "FAQ",
+  "nav.donate": "Give",
   "nav.aria": "Primary",
   "nav.ariaMobile": "Mobile",
   "nav.open": "Open menu",
@@ -271,7 +274,9 @@ const en: { [K in keyof typeof es]: string } = {
   "final.secondary": "Other ways to give ↑",
 
   "footer.tagline": "Women building careers across Latin America.",
-  "footer.knowUs": "Get to know us",
+  "footer.knowUs": "About us",
+  "footer.contact": "Contact",
+  "footer.privacy": "Privacy",
 };
 
 export const ui = { es, en } as const;
@@ -279,9 +284,10 @@ export const ui = { es, en } as const;
 export type UiKey = keyof typeof es;
 
 export const navHrefs = {
-  mission: "#mision",
-  impact: "#impacto",
-  donations: "#donaciones",
-  stories: "#historias",
+  mission: "#program",
+  impact: "#oportunidad",
+  donations: "#lilita",
+  stories: "#founders",
   faq: "#faq",
+  donate: "#give",
 } as const;

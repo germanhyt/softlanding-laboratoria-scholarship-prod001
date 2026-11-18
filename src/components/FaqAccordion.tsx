@@ -39,7 +39,7 @@ export default function FaqAccordion({ items, title }: Props) {
       data-reveal
     >
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-center">
+        <h2 className="font-display text-center text-[36px] font-normal leading-[1.05] tracking-[-0.5px] text-story-ink md:text-[52px]">
           {title}
         </h2>
         <div className="mt-10">
@@ -49,7 +49,11 @@ export default function FaqAccordion({ items, title }: Props) {
             const buttonId = `${baseId}-button-${index}`;
 
             return (
-              <div key={item.question} className="border-b border-border">
+              <div
+                key={item.question}
+                id={item.id}
+                className="scroll-mt-28 border-b border-border"
+              >
                 <h3 className="flex">
                   <button
                     type="button"
@@ -71,9 +75,20 @@ export default function FaqAccordion({ items, title }: Props) {
                   style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
                 >
                   <div className="overflow-hidden">
-                    <p className="pb-5 pr-8 text-sm leading-relaxed text-brand-ink/80">
-                      {item.answer}
-                    </p>
+                    <div className="pb-5 pr-8 text-base leading-relaxed text-story-ink">
+                      <p>{item.answer}</p>
+                      {item.steps && (
+                        <ol className="mt-4 list-decimal space-y-3 pl-5">
+                          {item.steps.map((step) => (
+                            <li key={step.lead}>
+                              <strong>{step.lead}</strong>
+                              {step.rest ? ` ${step.rest}` : null}
+                            </li>
+                          ))}
+                        </ol>
+                      )}
+                      {item.note && <p className="mt-4">{item.note}</p>}
+                    </div>
                   </div>
                 </div>
               </div>

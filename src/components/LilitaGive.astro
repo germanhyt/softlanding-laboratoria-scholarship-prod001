@@ -1,0 +1,105 @@
+---
+import { PLEDGE_WIDGET_ID } from "../data/faq";
+import { links, type getLilitaCopy } from "../data/lilita";
+
+interface Props {
+  copy: ReturnType<typeof getLilitaCopy>;
+}
+
+const { copy } = Astro.props;
+const give = copy.give;
+const ways = copy.ways;
+---
+
+<section id="give" class="scroll-mt-24 bg-white px-6 py-16 text-brand-ink md:py-24">
+  <div class="mx-auto flex max-w-[1100px] flex-col items-center text-center lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:text-left">
+    <h2 class="order-1 font-display text-[36px] font-normal leading-[1.05] tracking-[-0.5px] md:text-[52px] lg:col-start-1 lg:row-start-1">
+      {give.title}
+    </h2>
+    <p class="order-2 mt-4 lg:col-start-1 lg:row-start-2 lg:mt-5">
+      <span class="inline-block rounded-full bg-lila-claro/30 px-6 py-2 text-lg text-brand-ink">
+        <strong class="font-bold text-lila-oscuro">{give.pillLead}</strong>{" "}
+        {give.pillRest}
+      </span>
+    </p>
+    <div class="order-3 w-full lg:col-start-2 lg:row-span-5 lg:row-start-1 lg:self-center">
+      <div class="relative mx-auto mt-6 w-full max-w-[560px] lg:mt-0 lg:max-w-[480px]">
+        <div class="plg-donate" data-widget-id={PLEDGE_WIDGET_ID}></div>
+      </div>
+    </div>
+    <p class="order-4 mx-auto mt-6 max-w-[720px] text-2xl md:text-3xl lg:col-start-1 lg:mx-0 lg:row-start-3 lg:mt-5">
+      {give.support}
+    </p>
+    <p class="order-5 mt-8 text-lg leading-relaxed md:text-xl lg:col-start-1 lg:row-start-4">
+      {give.roi} <strong class="font-bold text-lila-oscuro">{give.roiStrong}</strong> {give.roiRest}
+    </p>
+    <a
+      href="#more-ways"
+      class="order-6 mt-6 inline-block text-sm font-semibold text-lila-oscuro underline underline-offset-4 hover:text-lila lg:col-start-1 lg:row-start-5"
+    >
+      {give.community}
+    </a>
+  </div>
+  <script is:inline async src="https://www.pledge.to/embed/widget.js"></script>
+</section>
+
+<section id="more-ways" class="scroll-mt-24 bg-brand-ink px-6 py-16 text-white md:py-24">
+  <div class="mx-auto max-w-6xl">
+    <h2 class="font-display text-[36px] font-normal leading-[1.05] tracking-[-0.5px] md:text-[52px]" data-reveal>
+      {ways.title}
+    </h2>
+    <div class="mt-10 grid items-stretch gap-5 md:grid-cols-3">
+      {
+        ways.items.map((item) => (
+          <article class="flex min-w-0 flex-col rounded-lg border border-white/25 p-6" data-reveal>
+            <h3 class="text-xl font-bold">{item.title}</h3>
+            <p class="mt-3 flex-1 leading-relaxed">
+              {item.body}{" "}
+              {item.href === "#faq-matching" && (
+                <button
+                  type="button"
+                  class="cause-copy cursor-pointer select-text font-bold tracking-wide underline decoration-dotted underline-offset-4"
+                  data-cause={links.causeId}
+                  data-copied={ways.copied}
+                >
+                  {links.causeId}
+                </button>
+              )}
+            </p>
+            <a
+              href={item.href}
+              class="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 whitespace-normal rounded-full bg-brand-yellow px-5 py-3 text-sm font-semibold text-brand-ink shadow transition-colors hover:bg-brand-yellow/90"
+              {...(item.href.startsWith("http") || item.href.startsWith("mailto:")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              {item.cta}
+              <svg viewBox="0 0 24 24" class="size-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+  <script is:inline>
+    document.querySelectorAll(".cause-copy").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const id = button.getAttribute("data-cause") || "";
+        const copied = button.getAttribute("data-copied") || "OK";
+        const original = button.textContent;
+        try {
+          await navigator.clipboard.writeText(id);
+          button.textContent = copied;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1600);
+        } catch {
+          button.textContent = id;
+        }
+      });
+    });
+  </script>
+</section>

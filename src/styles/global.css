@@ -2,14 +2,27 @@
 
 @theme {
   --font-sans: "Work Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Work Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "DM Serif Display", Georgia, serif;
 
   --color-brand-ink: #0e1d25;
+  --color-brand-navy: #1b2a4a;
+  --color-story-ink: #182240;
   --color-brand-yellow: #ffe521;
   --color-brand-magenta: #ee77f2;
+  --color-brand-pink: #ee77f2;
+  --color-brand-teal: #0e8c93;
+  --color-founders-teal: #078f99;
+  --color-brand-cream: #f4efe3;
   --color-brand-surface: #f4f4f4;
   --color-brand-mute: #d1d1d1;
   --color-brand-gray: #f9f9f9;
+  --color-lila: #775ece;
+  --color-lila-oscuro: #5b49b2;
+  --color-lila-claro: #b2a3f4;
+  --color-lila-mist: #f5f2fd;
+  --color-lila-soft: #dcd3fb;
+  --color-program-blush: #ebcbc5;
+  --color-story-muted: #5a6075;
   --color-muted-foreground: #5b6770;
   --color-border: #e6e6e6;
 

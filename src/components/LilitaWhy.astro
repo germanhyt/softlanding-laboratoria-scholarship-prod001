@@ -1,0 +1,179 @@
+---
+import type { getLilitaCopy } from "../data/lilita";
+
+interface Props {
+  copy: ReturnType<typeof getLilitaCopy>;
+}
+
+const { copy } = Astro.props;
+const why = copy.why;
+const lastNeed = why.needs.length - 1;
+
+const icons = [
+  `<svg viewBox="0 0 24 24" class="size-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>`,
+  `<svg viewBox="0 0 24 24" class="size-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>`,
+  `<svg viewBox="0 0 24 24" class="size-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg>`,
+  `<svg viewBox="0 0 24 24" class="size-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>`,
+  `<svg viewBox="0 0 24 24" class="size-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"></path><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path><path d="m21 3 1 11h-2"></path><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path><path d="M3 4h8"></path></svg>`,
+];
+---
+
+<section id="oportunidad" class="scroll-mt-24 bg-brand-ink px-6 py-16 text-white md:py-24">
+  <div class="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[45fr_55fr] lg:items-start lg:gap-16">
+    <div class="min-w-0" data-reveal>
+      <h2 class="font-display text-[36px] font-normal leading-[1.05] tracking-[-0.5px] md:text-[52px]">
+        {why.title}
+      </h2>
+      <p class="mt-5 max-w-[480px] text-base leading-relaxed text-white/85 md:text-lg">{why.body}</p>
+      <div class="mt-8 max-w-[420px]" data-stat-root>
+        <div class="rounded-[20px] bg-white/6 p-6 md:p-7">
+          <div class="relative min-h-[120px]">
+            {
+              why.stats.map((stat, index) => (
+                <div
+                  class:list={[
+                    "stat-slide absolute inset-0 transition-opacity duration-700",
+                    index === 0 ? "opacity-100" : "opacity-0",
+                  ]}
+                  data-stat-slide
+                  aria-hidden={index === 0 ? "false" : "true"}
+                >
+                  <strong class="block text-5xl font-bold text-brand-pink">{stat.value}</strong>
+                  <p class="mt-2 text-sm leading-snug text-white/80">{stat.label}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div class="mt-4 flex items-center gap-3">
+          <button
+            type="button"
+            data-stat-prev
+            aria-label={why.prev}
+            class="grid size-8 place-items-center rounded-full border border-white/30 text-sm transition-colors hover:border-brand-pink hover:text-brand-pink"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            data-stat-next
+            aria-label={why.next}
+            class="grid size-8 place-items-center rounded-full border border-white/30 text-sm transition-colors hover:border-brand-pink hover:text-brand-pink"
+          >
+            →
+          </button>
+          <div class="ml-1 flex gap-2">
+            {
+              why.stats.map((stat, index) => (
+                <button
+                  type="button"
+                  class:list={[
+                    "stat-dot size-2 rounded-full transition-colors",
+                    index === 0 ? "bg-brand-pink" : "bg-white/30",
+                  ]}
+                  data-stat-dot
+                  aria-label={stat.value}
+                  aria-current={index === 0 ? "true" : "false"}
+                />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="min-w-0">
+      <p class="text-[13px] font-bold uppercase tracking-[0.18em] text-brand-pink" data-reveal>
+        {why.needsLabel}
+      </p>
+      <ol class="mt-4">
+        {
+          why.needs.map((need, index) => (
+            <li
+              class:list={[
+                "flex items-start gap-4 py-5",
+                index === lastNeed
+                  ? "mt-3 rounded-2xl bg-brand-pink px-5 text-story-ink"
+                  : "border-b border-white/12",
+              ]}
+              data-reveal
+            >
+              <span
+                class:list={["w-6 shrink-0 pt-0.5", index === lastNeed ? "text-story-ink" : "text-brand-pink"]}
+                set:html={icons[index]}
+              />
+              <div class="min-w-0 flex-1">
+                <p class="font-bold">{need.title}</p>
+                <p class:list={["mt-1 text-sm", index === lastNeed ? "text-story-ink/80" : "text-white/70"]}>
+                  {need.body}
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <figure class="mt-4 border-l-[3px] border-brand-pink pl-6 md:pl-8 lg:col-span-2 lg:mt-0" data-reveal>
+      <blockquote class="text-2xl italic leading-relaxed text-white md:text-[26px]">{why.quote}</blockquote>
+      <figcaption class="mt-5">
+        <p class="font-bold">{why.quoteBy}</p>
+        <p class="mt-1 text-sm text-white/60">{why.quoteRole}</p>
+      </figcaption>
+    </figure>
+  </div>
+  <script is:inline>
+    document.querySelectorAll("[data-stat-root]").forEach((root) => {
+      const slides = [...root.querySelectorAll("[data-stat-slide]")];
+      const dots = [...root.querySelectorAll("[data-stat-dot]")];
+      const prev = root.querySelector("[data-stat-prev]");
+      const next = root.querySelector("[data-stat-next]");
+      if (slides.length < 2 || !prev || !next) return;
+      let index = 0;
+      let timer = 0;
+      const show = (nextIndex) => {
+        index = (nextIndex + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+          const on = i === index;
+          slide.classList.toggle("opacity-100", on);
+          slide.classList.toggle("opacity-0", !on);
+          slide.setAttribute("aria-hidden", on ? "false" : "true");
+        });
+        dots.forEach((dot, i) => {
+          const on = i === index;
+          dot.classList.toggle("bg-brand-pink", on);
+          dot.classList.toggle("bg-white/30", !on);
+          dot.setAttribute("aria-current", on ? "true" : "false");
+        });
+      };
+      const arm = () => {
+        window.clearInterval(timer);
+        timer = window.setInterval(() => show(index + 1), 5000);
+      };
+      dots.forEach((dot, i) =>
+        dot.addEventListener("click", () => {
+          show(i);
+          arm();
+        }),
+      );
+      prev.addEventListener("click", () => {
+        show(index - 1);
+        arm();
+      });
+      next.addEventListener("click", () => {
+        show(index + 1);
+        arm();
+      });
+      arm();
+    });
+  </script>
+</section>
+
+<section class="relative h-[320px] w-full overflow-hidden lg:h-[60vh] lg:max-h-[640px] lg:min-h-[420px]">
+  <img
+    src="/images/lilita/celebration.webp"
+    alt={why.imageAlt}
+    class="absolute inset-0 h-full w-full object-cover object-[50%_25%] lg:object-[50%_35%]"
+    loading="lazy"
+  />
+</section>

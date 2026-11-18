@@ -18,6 +18,8 @@ type Props = {
   labelEn: string;
   hrefEs: string;
   hrefEn: string;
+  donateLabel: string;
+  donateHref: string;
   items: NavItem[];
 };
 
@@ -34,6 +36,8 @@ export default function SiteHeader({
   labelEn,
   hrefEs,
   hrefEn,
+  donateLabel,
+  donateHref,
   items,
 }: Props) {
   const [open, setOpen] = useState(false);
@@ -57,11 +61,12 @@ export default function SiteHeader({
   const close = () => setOpen(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5 md:gap-6 md:py-6">
+    <header className="sticky top-0 z-50">
+      <div className="border-b border-border bg-white/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 xl:px-6">
         <a href="#top" className="relative z-[60] shrink-0" onClick={close}>
           <img
-            src="/images/logo-laboratoria-white.png"
+            src="/images/logo-laboratoria-black.png"
             alt={logoAlt}
             className="h-7 w-auto md:h-8"
             width={1223}
@@ -70,25 +75,27 @@ export default function SiteHeader({
         </a>
 
         <div className="relative z-[60] flex items-center gap-3 md:gap-5">
-          {/* Desktop nav */}
-          <nav
-            className="hidden items-center gap-7 lg:flex"
-            aria-label={navAria}
-          >
+          <nav className="hidden items-center gap-4 xl:gap-5 lg:flex" aria-label={navAria}>
             {items.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-white/95 transition-opacity hover:opacity-80"
+                className="whitespace-nowrap text-sm font-medium text-story-ink transition-colors hover:text-lila-oscuro"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* Language toggle — from sm up (stays in top bar) */}
+          <a
+            href={donateHref}
+            className="btn-cta hidden rounded-full bg-lila px-4 py-2 text-sm font-bold text-white hover:bg-lila-oscuro sm:inline-flex"
+          >
+            {donateLabel}
+          </a>
+
           <div
-            className="lang-toggle hidden sm:inline-flex items-center rounded-full border border-white/25 bg-white/5 p-0.5 text-xs font-semibold tracking-wide text-white backdrop-blur-sm"
+            className="lang-toggle hidden items-center rounded-full border border-brand-ink/15 bg-white p-0.5 text-xs font-semibold tracking-wide text-brand-ink sm:inline-flex"
             role="group"
             aria-label={langSwitchLabel}
           >
@@ -96,9 +103,7 @@ export default function SiteHeader({
               href={hrefEs}
               hrefLang="es"
               className={`rounded-full px-2.5 py-1.5 transition ${
-                lang === "es"
-                  ? "bg-brand-yellow text-brand-ink"
-                  : "text-white/80 hover:text-white"
+                lang === "es" ? "bg-brand-yellow text-brand-ink" : "text-brand-ink/70 hover:text-brand-ink"
               }`}
               aria-current={lang === "es" ? "page" : undefined}
             >
@@ -108,9 +113,7 @@ export default function SiteHeader({
               href={hrefEn}
               hrefLang="en"
               className={`rounded-full px-2.5 py-1.5 transition ${
-                lang === "en"
-                  ? "bg-brand-yellow text-brand-ink"
-                  : "text-white/80 hover:text-white"
+                lang === "en" ? "bg-brand-yellow text-brand-ink" : "text-brand-ink/70 hover:text-brand-ink"
               }`}
               aria-current={lang === "en" ? "page" : undefined}
             >
@@ -118,10 +121,9 @@ export default function SiteHeader({
             </a>
           </div>
 
-          {/* Hamburger */}
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/5 text-white backdrop-blur-sm lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/15 bg-white text-brand-ink lg:hidden"
             aria-expanded={open}
             aria-controls={panelId}
             aria-label={open ? closeLabel : openLabel}
@@ -130,17 +132,17 @@ export default function SiteHeader({
             <span className="sr-only">{open ? closeLabel : menuLabel}</span>
             <span className="relative block h-3.5 w-5">
               <span
-                className={`absolute left-0 top-0 block h-0.5 w-full bg-white transition-transform duration-300 ease-out ${
+                className={`absolute left-0 top-0 block h-0.5 w-full bg-brand-ink transition-transform duration-300 ease-out ${
                   open ? "translate-y-[6px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`absolute left-0 top-[6px] block h-0.5 w-full bg-white transition-opacity duration-200 ${
+                className={`absolute left-0 top-[6px] block h-0.5 w-full bg-brand-ink transition-opacity duration-200 ${
                   open ? "opacity-0" : "opacity-100"
                 }`}
               />
               <span
-                className={`absolute left-0 top-[12px] block h-0.5 w-full bg-white transition-transform duration-300 ease-out ${
+                className={`absolute left-0 top-[12px] block h-0.5 w-full bg-brand-ink transition-transform duration-300 ease-out ${
                   open ? "translate-y-[-6px] -rotate-45" : ""
                 }`}
               />
@@ -148,8 +150,8 @@ export default function SiteHeader({
           </button>
         </div>
       </div>
+      </div>
 
-      {/* Mobile panel — clip-path circle expand */}
       <div
         id={panelId}
         role="dialog"
@@ -174,23 +176,25 @@ export default function SiteHeader({
               {item.label}
             </a>
           ))}
-
-          {/* Language toggle — only below sm, under menu items */}
+          <a
+            href={donateHref}
+            onClick={close}
+            className="header-mobile-link mt-6 inline-flex w-fit rounded-full bg-lila px-6 py-3 text-base font-bold text-white"
+            style={{ transitionDelay: open ? `${120 + items.length * 50}ms` : "0ms" }}
+          >
+            {donateLabel}
+          </a>
           <div
-            className="header-mobile-link mt-8 inline-flex sm:hidden w-fit items-center rounded-full border border-white/20 bg-white/5 p-0.5 text-sm font-semibold"
+            className="header-mobile-link mt-8 inline-flex w-fit items-center rounded-full border border-white/20 bg-white/5 p-0.5 text-sm font-semibold sm:hidden"
             role="group"
             aria-label={langSwitchLabel}
-            style={{
-              transitionDelay: open ? `${120 + items.length * 50}ms` : "0ms",
-            }}
+            style={{ transitionDelay: open ? `${180 + items.length * 50}ms` : "0ms" }}
           >
             <a
               href={hrefEs}
               hrefLang="es"
               className={`rounded-full px-4 py-2 transition ${
-                lang === "es"
-                  ? "bg-brand-yellow text-brand-ink"
-                  : "text-white/80"
+                lang === "es" ? "bg-brand-yellow text-brand-ink" : "text-white/80"
               }`}
               aria-current={lang === "es" ? "page" : undefined}
             >
@@ -200,9 +204,7 @@ export default function SiteHeader({
               href={hrefEn}
               hrefLang="en"
               className={`rounded-full px-4 py-2 transition ${
-                lang === "en"
-                  ? "bg-brand-yellow text-brand-ink"
-                  : "text-white/80"
+                lang === "en" ? "bg-brand-yellow text-brand-ink" : "text-white/80"
               }`}
               aria-current={lang === "en" ? "page" : undefined}
             >

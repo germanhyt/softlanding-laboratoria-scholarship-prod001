@@ -1,0 +1,149 @@
+---
+import { links, type getLilitaCopy } from "../data/lilita";
+
+interface Props {
+  copy: ReturnType<typeof getLilitaCopy>;
+}
+
+const { copy } = Astro.props;
+const program = copy.program;
+const quoteParts = program.quoteBy.replace(/^—\s*/, "").split(",");
+const quoteName = quoteParts[0]?.trim() ?? program.quoteBy;
+const quoteRole = quoteParts.slice(1).join(",").trim();
+const tones = [
+  "bg-story-ink text-white",
+  "bg-program-blush text-story-ink",
+  "bg-brand-cream text-story-ink",
+  "bg-lila-soft text-story-ink",
+];
+const statTones = ["text-lila-claro", "text-lila-oscuro", "text-lila-oscuro", "text-lila-oscuro"];
+const lineTones = ["bg-white/25", "bg-story-ink/20", "bg-story-ink/20", "bg-story-ink/20"];
+---
+
+<section id="program" class="scroll-mt-24 bg-white px-6 py-16 text-story-ink md:py-24">
+  <div class="mx-auto max-w-[1200px]">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-16">
+      <div data-reveal>
+        <h2 class="font-display text-[36px] font-normal leading-[1.05] tracking-[-0.5px] md:text-[52px]">
+          {program.title}
+        </h2>
+        <p class="mt-4 text-lg font-semibold leading-relaxed md:text-xl">{program.lede}</p>
+        <a
+          href={links.program}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-8 hidden min-h-12 items-center justify-center rounded-full bg-brand-yellow px-7 py-3 text-base font-semibold text-brand-ink shadow transition-colors hover:bg-brand-yellow/90 lg:inline-flex"
+        >
+          {program.cta}
+        </a>
+      </div>
+      <div class="space-y-4 text-base leading-relaxed md:text-lg" data-reveal>
+        <p>{program.p1}</p>
+        <p>{program.p2}</p>
+        <a href={links.activa} class="inline-flex font-semibold text-lila-oscuro underline underline-offset-4">
+          {program.more}
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-16 flex items-center justify-between gap-4" data-reveal>
+      <h3 class="font-display text-[30px] font-normal leading-[1.05] tracking-[-0.5px] md:text-[34px]">
+        {program.outcomesTitle}
+      </h3>
+      <div class="flex shrink-0 gap-3">
+        <button
+          type="button"
+          id="outcome-prev"
+          aria-label={program.prev}
+          class="grid size-11 place-items-center rounded-full border-2 border-story-ink text-story-ink transition hover:bg-story-ink hover:text-white disabled:pointer-events-none disabled:opacity-30"
+        >
+          <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 19-7-7 7-7"></path>
+            <path d="M19 12H5"></path>
+          </svg>
+        </button>
+        <button
+          type="button"
+          id="outcome-next"
+          aria-label={program.next}
+          class="grid size-11 place-items-center rounded-full border-2 border-story-ink text-story-ink transition hover:bg-story-ink hover:text-white disabled:pointer-events-none disabled:opacity-30"
+        >
+          <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="outcome-track"
+      class="-mx-2 mt-8 flex snap-x snap-mandatory scroll-px-2 gap-5 overflow-x-auto px-2 pb-3 pt-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    >
+      {
+        program.outcomes.map((item, index) => (
+          <article
+            class:list={[
+              "flex shrink-0 basis-[85%] snap-start flex-col rounded-[20px] p-6 transition duration-500 ease-out hover:-translate-y-1 hover:shadow-lg md:basis-[calc((100%-20px)/2.15)] lg:basis-[calc((100%-40px)/3.15)]",
+              tones[index],
+            ]}
+          >
+            <h4 class="text-xl font-bold">{item.title}</h4>
+            <p class="mt-3 leading-relaxed">{item.body}</p>
+            <div class="mt-auto pt-6">
+              <div class:list={["h-px w-full", lineTones[index]]} />
+              <strong class:list={["mt-4 block text-4xl font-bold", statTones[index]]}>{item.stat}</strong>
+              <p class="mt-1 min-h-[2.5rem] text-sm">{item.statLabel}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <div class="mt-5 h-[3px] w-full overflow-hidden rounded-full bg-story-ink/10" aria-hidden="true">
+      <div id="outcome-progress" class="h-full rounded-full bg-lila-oscuro transition-[width] duration-200" style="width: 0%"></div>
+    </div>
+
+    <a
+      href={links.program}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-yellow px-7 py-3 text-base font-semibold text-brand-ink shadow transition-colors hover:bg-brand-yellow/90 lg:hidden"
+    >
+      {program.cta}
+    </a>
+
+    <blockquote class="mt-12 border-l-4 border-lila-claro py-2 pl-5" data-reveal>
+      <p class="text-lg italic leading-relaxed text-story-ink md:text-xl">{program.quote}</p>
+      <footer class="mt-4 text-sm not-italic">
+        <span class="font-bold text-story-ink">— {quoteName}</span>{quoteRole && <span class="text-story-muted">, {quoteRole}</span>}
+      </footer>
+    </blockquote>
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById("outcome-track");
+  const bar = document.getElementById("outcome-progress");
+  const prev = document.getElementById("outcome-prev");
+  const next = document.getElementById("outcome-next");
+
+  if (track && bar && prev instanceof HTMLButtonElement && next instanceof HTMLButtonElement) {
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const ratio = track.scrollWidth === 0 ? 1 : (track.scrollLeft + track.clientWidth) / track.scrollWidth;
+      bar.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = max <= 2 || track.scrollLeft >= max - 2;
+    };
+
+    prev.addEventListener("click", () => {
+      track.scrollBy({ left: -Math.max(track.clientWidth * 0.72, 280), behavior: "smooth" });
+    });
+    next.addEventListener("click", () => {
+      track.scrollBy({ left: Math.max(track.clientWidth * 0.72, 280), behavior: "smooth" });
+    });
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+</script>

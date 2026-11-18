@@ -1,0 +1,102 @@
+---
+import { links, type getLilitaCopy } from "../data/lilita";
+
+interface Props {
+  copy: ReturnType<typeof getLilitaCopy>;
+}
+
+const { copy } = Astro.props;
+const lilita = copy.lilita;
+const founders = copy.founders;
+const titleParts = founders.title.trim().split(" ");
+const titleAccent = titleParts.pop() ?? founders.title;
+const titleLead = titleParts.join(" ");
+const icons = [
+  `<svg viewBox="0 0 24 24" class="size-9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"></path><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg>`,
+  `<svg viewBox="0 0 24 24" class="size-9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>`,
+  `<svg viewBox="0 0 24 24" class="size-9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>`,
+];
+---
+
+<section id="lilita" class="scroll-mt-24 bg-brand-cream px-6 py-16 text-brand-ink md:py-24">
+  <div class="mx-auto grid max-w-[1200px] items-center gap-10 md:grid-cols-2">
+    <div data-reveal="left">
+      <h2 class="font-display text-[36px] font-normal leading-[1.05] tracking-[-0.5px] md:text-[52px]">
+        {lilita.title}
+      </h2>
+      <div class="mt-6 space-y-4 text-base leading-relaxed md:text-lg">
+        <p>{lilita.p1}</p>
+        <p>{lilita.p2}</p>
+        <p>{lilita.p3}</p>
+      </div>
+      <a
+        href={links.honor}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta mt-8 inline-flex rounded-full bg-brand-yellow px-6 py-3 text-sm font-semibold text-brand-ink"
+      >
+        {lilita.cta}
+      </a>
+    </div>
+    <div class="relative" data-reveal="right">
+      <img
+        src="/images/lilita/lilita-photo.webp"
+        alt={lilita.imageAlt}
+        class="w-full rounded-3xl object-cover"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<section id="founders" class="scroll-mt-24 bg-lila-mist px-6 py-16 text-story-ink md:py-24">
+  <div class="mx-auto grid max-w-[1100px] items-center gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-8">
+    <div class="flex justify-center" data-reveal>
+      <img
+        src="/images/lilita/lilita-seated.webp"
+        alt={founders.drawingAlt}
+        class="w-full max-w-sm object-contain"
+        loading="lazy"
+      />
+    </div>
+    <div class="text-center lg:text-left">
+      <p class="text-sm font-bold uppercase tracking-[0.18em]" data-reveal>
+        The Lilita Fund
+        <span class="text-xs font-normal normal-case tracking-normal opacity-80">by &lt;Laboratoria&gt;</span>
+      </p>
+      <h2 class="mt-5 font-display text-[40px] font-normal leading-[1.05] tracking-[-0.5px] lg:text-[60px]" data-reveal>
+        {titleLead}{" "}
+        <span class="relative inline-block">
+          {titleAccent}
+          <svg aria-hidden="true" class="absolute -bottom-2 left-0 h-[0.16em] w-full" viewBox="0 0 100 12" preserveAspectRatio="none">
+            <path d="M2 8 C 22 3, 55 11, 98 5" fill="none" stroke="var(--color-founders-teal)" stroke-width="6" stroke-linecap="round"></path>
+          </svg>
+        </span>
+      </h2>
+      <p class="mx-auto mt-8 max-w-[640px] text-base leading-relaxed md:text-lg lg:mx-0" data-reveal>{founders.body}</p>
+      <ul class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {
+          founders.groups.map((group, index) => (
+            <li class="flex flex-col items-center rounded-[20px] bg-white px-4 py-6 text-center shadow-sm lg:items-start lg:text-left" data-reveal>
+              <span aria-hidden="true" class="flex size-[72px] shrink-0 items-center justify-center rounded-full bg-lila-claro text-story-ink" set:html={icons[index]} />
+              <p class="mt-4 font-display text-xl font-bold">{group.title}</p>
+              <p class="mt-1 text-sm leading-relaxed text-story-muted">{group.body}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="mt-8 flex justify-center lg:justify-start" data-reveal>
+        <a
+          href="#give"
+          class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-lila px-7 py-3 text-base font-bold text-white shadow transition-colors hover:bg-lila-oscuro"
+        >
+          {founders.cta}
+          <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

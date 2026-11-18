@@ -1,0 +1,49 @@
+---
+import { links, type getLilitaCopy } from "../data/lilita";
+
+interface Props {
+  copy: ReturnType<typeof getLilitaCopy>;
+}
+
+const { copy } = Astro.props;
+const final = copy.final;
+---
+
+<section class="overflow-hidden">
+  <div class="relative h-[300px] w-full md:h-[max(520px,40.5vw)]">
+    <img
+      src="/images/lilita/community.webp"
+      alt={final.imageAlt}
+      class="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-lila-oscuro/20"></div>
+  </div>
+  <div class="bg-story-ink px-6 py-10 text-center text-white">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="font-display text-[38px] font-normal leading-[1.05] tracking-[-0.5px] md:text-[56px]">
+        {final.title}
+      </h2>
+      <div class="mt-4">
+        <a
+          href={links.closing}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-12 w-full items-center justify-center gap-2 whitespace-normal rounded-full bg-brand-yellow px-7 py-3 text-center text-base font-semibold text-brand-ink shadow transition-colors hover:bg-brand-yellow/90 sm:w-auto"
+        >
+          {final.cta}
+          <svg viewBox="0 0 24 24" class="size-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <a href="#more-ways" class="mt-4 inline-flex min-h-12 items-center gap-2 underline underline-offset-4">
+        {final.secondary}
+      </a>
+    </div>
+  </div>
+</section>
+<div class="bg-white px-6 pb-8 pt-10 md:px-8">
+  <p class="mx-auto max-w-6xl text-xs leading-relaxed text-muted-foreground">{copy.disclaimer}</p>
+</div>

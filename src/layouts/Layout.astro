@@ -25,7 +25,7 @@ const pageDescription = description ?? t("meta.description");
 
 const site = Astro.site ?? new URL("https://give-laboratoria.la");
 const canonicalURL = new URL(Astro.url.pathname, site);
-const ogImageURL = new URL("/images/photo-hero.webp", site);
+const ogImageURL = new URL("/images/lilita/community.webp", site);
 const logoURL = new URL("/images/logo-laboratoria-black.png", site);
 const esURL = new URL("/", site);
 const enURL = new URL("/en/", site);
@@ -137,7 +137,7 @@ const jsonLd = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/png" href="/favicon.png" />
