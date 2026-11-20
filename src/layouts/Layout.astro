@@ -9,6 +9,7 @@ interface Props {
   title?: string;
   description?: string;
   lang?: Lang;
+  donateName?: string;
   faqItems?: FaqItem[];
 }
 
@@ -16,8 +17,19 @@ const {
   title,
   description,
   lang = "es",
+  donateName,
   faqItems = [],
 } = Astro.props;
+
+function faqAnswer(item: FaqItem) {
+  const steps = item.steps
+    ?.map((step, index) => {
+      const detail = step.rest ? ` ${step.rest}` : "";
+      return `${index + 1}. ${step.lead}${detail}`;
+    })
+    .join(" ");
+  return [item.answer, steps, item.note].filter(Boolean).join(" ");
+}
 
 const t = useTranslations(lang);
 const pageTitle = title ?? t("meta.title");
@@ -29,8 +41,10 @@ const ogImageURL = new URL("/images/lilita/community.webp", site);
 const logoURL = new URL("/images/logo-laboratoria-black.png", site);
 const esURL = new URL("/", site);
 const enURL = new URL("/en/", site);
-const ogLocale = lang === "es" ? "es_LA" : "en_US";
-const ogLocaleAlt = lang === "es" ? "en_US" : "es_LA";
+const ptURL = new URL("/pt/", site);
+const ogLocales = { es: "es_LA", en: "en_US", pt: "pt_BR" } as const;
+const ogLocale = ogLocales[lang];
+const htmlLang = lang === "pt" ? "pt-BR" : lang;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -53,7 +67,7 @@ const jsonLd = {
       url: site.origin + "/",
       name: t("meta.siteName"),
       description: pageDescription,
-      inLanguage: ["es", "en"],
+      inLanguage: ["es", "en", "pt"],
       publisher: { "@id": `${site.origin}/#organization` },
     },
     {
@@ -64,7 +78,7 @@ const jsonLd = {
       description: pageDescription,
       isPartOf: { "@id": `${site.origin}/#website` },
       about: { "@id": `${site.origin}/#organization` },
-      inLanguage: lang,
+      inLanguage: htmlLang,
       primaryImageOfPage: {
         "@type": "ImageObject",
         url: ogImageURL.href,
@@ -72,7 +86,7 @@ const jsonLd = {
     },
     {
       "@type": "DonateAction",
-      name: t("hero.cta"),
+      name: donateName ?? t("hero.cta"),
       target: DONATE_URL,
       recipient: { "@id": `${site.origin}/#organization` },
     },
@@ -82,13 +96,13 @@ const jsonLd = {
             "@type": "FAQPage",
             "@id": `${canonicalURL.href}#faq`,
             isPartOf: { "@id": `${canonicalURL.href}#webpage` },
-            inLanguage: lang,
+            inLanguage: htmlLang,
             mainEntity: faqItems.map((item) => ({
               "@type": "Question",
               name: item.question,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: item.answer,
+                text: faqAnswer(item),
               },
             })),
           },
@@ -99,7 +113,7 @@ const jsonLd = {
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,6 +127,7 @@ const jsonLd = {
     <link rel="canonical" href={canonicalURL.href} />
     <link rel="alternate" hreflang="es" href={esURL.href} />
     <link rel="alternate" hreflang="en" href={enURL.href} />
+    <link rel="alternate" hreflang="pt-BR" href={ptURL.href} />
     <link rel="alternate" hreflang="x-default" href={esURL.href} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -122,10 +137,12 @@ const jsonLd = {
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:locale" content={ogLocale} />
-    <meta property="og:locale:alternate" content={ogLocaleAlt} />
+    {Object.entries(ogLocales)
+      .filter(([code]) => code !== lang)
+      .map(([, locale]) => <meta property="og:locale:alternate" content={locale} />)}
     <meta property="og:image" content={ogImageURL.href} />
     <meta property="og:image:alt" content={t("meta.ogImageAlt")} />
-    <meta property="og:image:width" content="1459" />
+    <meta property="og:image:width" content="1216" />
     <meta property="og:image:height" content="1824" />
 
     <meta name="twitter:card" content="summary_large_image" />

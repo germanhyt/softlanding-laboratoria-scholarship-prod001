@@ -27,7 +27,7 @@ const lineTones = ["bg-white/25", "bg-story-ink/20", "bg-story-ink/20", "bg-stor
         <h2 class="font-display text-[36px] font-normal leading-[1.05] tracking-[-0.5px] md:text-[52px]">
           {program.title}
         </h2>
-        <p class="mt-4 text-lg font-semibold leading-relaxed md:text-xl">{program.lede}</p>
+        {program.lede && <p class="mt-4 text-lg font-semibold leading-relaxed md:text-xl">{program.lede}</p>}
         <a
           href={links.program}
           target="_blank"
@@ -39,7 +39,7 @@ const lineTones = ["bg-white/25", "bg-story-ink/20", "bg-story-ink/20", "bg-stor
       </div>
       <div class="space-y-4 text-base leading-relaxed md:text-lg" data-reveal>
         <p>{program.p1}</p>
-        <p>{program.p2}</p>
+        {program.p2 && <p>{program.p2}</p>}
         <a href={links.activa} class="inline-flex font-semibold text-lila-oscuro underline underline-offset-4">
           {program.more}
         </a>

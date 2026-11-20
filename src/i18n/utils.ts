@@ -11,5 +11,6 @@ export function useTranslations(lang: Lang) {
 export function getLangFromUrl(url: URL): Lang {
   const [, maybeLang] = url.pathname.split("/");
   if (maybeLang === "en") return "en";
+  if (maybeLang === "pt") return "pt";
   return defaultLang;
 }

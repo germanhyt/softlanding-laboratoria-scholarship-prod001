@@ -23,7 +23,7 @@ const t = useTranslations(lang);
 const copy = getLilitaCopy(lang);
 ---
 
-<Layout lang={lang} title={t("meta.title")} description={t("meta.description")} faqItems={copy.faq}>
+<Layout lang={lang} title={t("meta.title")} description={t("meta.description")} donateName={copy.hero.cta} faqItems={copy.faq}>
   <Header lang={lang} />
   <main>
     <LilitaHero copy={copy} />

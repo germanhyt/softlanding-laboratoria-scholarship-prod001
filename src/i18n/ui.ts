@@ -1,6 +1,7 @@
 export const languages = {
   es: "ES",
   en: "EN",
+  pt: "PT",
 } as const;
 
 export type Lang = keyof typeof languages;
@@ -31,6 +32,7 @@ const es = {
   "lang.switch": "Idioma",
   "lang.es": "ES",
   "lang.en": "EN",
+  "lang.pt": "PT",
   "logo.alt": "Laboratoria",
   "img.hero.alt": "Mujeres reunidas en un evento de la comunidad Laboratoria",
   "img.community.alt": "Mentora y participante de Laboratoria trabajando juntas",
@@ -145,9 +147,9 @@ const es = {
 } as const;
 
 const en: { [K in keyof typeof es]: string } = {
-  "meta.title": "Lilita Fund — Nobody gets there alone",
+  "meta.title": "Lilita Fund — Nobody does this alone",
   "meta.description":
-    "Meet the stories behind the Lilita Fund and help keep professional opportunities within reach for women in Latin America.",
+    "As Laboratoria enters a new chapter, the Lilita Fund invites individual donors to join a growing network of mentors, hiring partners and graduates.",
   "meta.ogImageAlt":
     "Women from the Laboratoria community gathered at an event",
   "meta.siteName": "Lilita Fund",
@@ -168,6 +170,7 @@ const en: { [K in keyof typeof es]: string } = {
   "lang.switch": "Language",
   "lang.es": "ES",
   "lang.en": "EN",
+  "lang.pt": "PT",
   "logo.alt": "Laboratoria",
   "img.hero.alt": "Women gathered at a Laboratoria community event",
   "img.community.alt": "Laboratoria mentor and participant working together",
@@ -274,12 +277,38 @@ const en: { [K in keyof typeof es]: string } = {
   "final.secondary": "Other ways to give ↑",
 
   "footer.tagline": "Women building careers across Latin America.",
-  "footer.knowUs": "About us",
+  "footer.knowUs": "About",
   "footer.contact": "Contact",
   "footer.privacy": "Privacy",
 };
 
-export const ui = { es, en } as const;
+const pt: { [K in keyof typeof es]: string } = {
+  ...en,
+  "meta.title": "Lilita Fund — Ninguém chega lá sozinha",
+  "meta.description":
+    "A Laboratoria entra em uma nova etapa. O Lilita Fund convida você a fazer parte de uma rede de mentoras, empresas que contratam e egressas.",
+  "meta.ogImageAlt": "Mulheres da comunidade Laboratoria reunidas em um encontro",
+  "meta.keywords":
+    "Laboratoria, Lilita Fund, bolsas, doações, mulheres, América Latina",
+  "nav.mission": "Nosso programa",
+  "nav.impact": "A oportunidade",
+  "nav.donations": "A história da Lilita",
+  "nav.stories": "Fundadoras",
+  "nav.faq": "Perguntas frequentes",
+  "nav.donate": "Doe",
+  "nav.aria": "Principal",
+  "nav.ariaMobile": "Móvel",
+  "nav.open": "Abrir menu",
+  "nav.close": "Fechar menu",
+  "nav.menu": "Menu",
+  "lang.switch": "Idioma",
+  "footer.tagline": "Mulheres construindo carreiras em toda a América Latina.",
+  "footer.knowUs": "Sobre",
+  "footer.contact": "Contato",
+  "footer.privacy": "Privacidade",
+};
+
+export const ui = { es, en, pt } as const;
 
 export type UiKey = keyof typeof es;
 

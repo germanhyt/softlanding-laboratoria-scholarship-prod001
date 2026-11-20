@@ -5,8 +5,10 @@ export type NavItem = {
   href: string;
 };
 
+type LocaleCode = "es" | "en" | "pt";
+
 type Props = {
-  lang: "es" | "en";
+  lang: LocaleCode;
   logoAlt: string;
   navAria: string;
   navAriaMobile: string;
@@ -16,8 +18,10 @@ type Props = {
   langSwitchLabel: string;
   labelEs: string;
   labelEn: string;
+  labelPt: string;
   hrefEs: string;
   hrefEn: string;
+  hrefPt: string;
   donateLabel: string;
   donateHref: string;
   items: NavItem[];
@@ -34,8 +38,10 @@ export default function SiteHeader({
   langSwitchLabel,
   labelEs,
   labelEn,
+  labelPt,
   hrefEs,
   hrefEn,
+  hrefPt,
   donateLabel,
   donateHref,
   items,
@@ -59,6 +65,11 @@ export default function SiteHeader({
   }, []);
 
   const close = () => setOpen(false);
+  const locales: { code: LocaleCode; href: string; label: string; hrefLang: string }[] = [
+    { code: "es", href: hrefEs, label: labelEs, hrefLang: "es" },
+    { code: "en", href: hrefEn, label: labelEn, hrefLang: "en" },
+    { code: "pt", href: hrefPt, label: labelPt, hrefLang: "pt-BR" },
+  ];
 
   return (
     <header className="sticky top-0 z-50">
@@ -99,26 +110,19 @@ export default function SiteHeader({
             role="group"
             aria-label={langSwitchLabel}
           >
-            <a
-              href={hrefEs}
-              hrefLang="es"
-              className={`rounded-full px-2.5 py-1.5 transition ${
-                lang === "es" ? "bg-brand-yellow text-brand-ink" : "text-brand-ink/70 hover:text-brand-ink"
-              }`}
-              aria-current={lang === "es" ? "page" : undefined}
-            >
-              {labelEs}
-            </a>
-            <a
-              href={hrefEn}
-              hrefLang="en"
-              className={`rounded-full px-2.5 py-1.5 transition ${
-                lang === "en" ? "bg-brand-yellow text-brand-ink" : "text-brand-ink/70 hover:text-brand-ink"
-              }`}
-              aria-current={lang === "en" ? "page" : undefined}
-            >
-              {labelEn}
-            </a>
+            {locales.map((locale) => (
+              <a
+                key={locale.code}
+                href={locale.href}
+                hrefLang={locale.hrefLang}
+                className={`rounded-full px-2.5 py-1.5 transition ${
+                  lang === locale.code ? "bg-brand-yellow text-brand-ink" : "text-brand-ink/70 hover:text-brand-ink"
+                }`}
+                aria-current={lang === locale.code ? "page" : undefined}
+              >
+                {locale.label}
+              </a>
+            ))}
           </div>
 
           <button
@@ -190,26 +194,19 @@ export default function SiteHeader({
             aria-label={langSwitchLabel}
             style={{ transitionDelay: open ? `${180 + items.length * 50}ms` : "0ms" }}
           >
-            <a
-              href={hrefEs}
-              hrefLang="es"
-              className={`rounded-full px-4 py-2 transition ${
-                lang === "es" ? "bg-brand-yellow text-brand-ink" : "text-white/80"
-              }`}
-              aria-current={lang === "es" ? "page" : undefined}
-            >
-              {labelEs}
-            </a>
-            <a
-              href={hrefEn}
-              hrefLang="en"
-              className={`rounded-full px-4 py-2 transition ${
-                lang === "en" ? "bg-brand-yellow text-brand-ink" : "text-white/80"
-              }`}
-              aria-current={lang === "en" ? "page" : undefined}
-            >
-              {labelEn}
-            </a>
+            {locales.map((locale) => (
+              <a
+                key={locale.code}
+                href={locale.href}
+                hrefLang={locale.hrefLang}
+                className={`rounded-full px-4 py-2 transition ${
+                  lang === locale.code ? "bg-brand-yellow text-brand-ink" : "text-white/80"
+                }`}
+                aria-current={lang === locale.code ? "page" : undefined}
+              >
+                {locale.label}
+              </a>
+            ))}
           </div>
         </nav>
       </div>

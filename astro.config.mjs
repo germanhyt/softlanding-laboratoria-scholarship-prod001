@@ -16,13 +16,14 @@ export default defineConfig({
         locales: {
           es: "es",
           en: "en",
+          pt: "pt-BR",
         },
       },
     }),
   ],
   i18n: {
     defaultLocale: "es",
-    locales: ["es", "en"],
+    locales: ["es", "en", "pt"],
     routing: {
       prefixDefaultLocale: false,
     },

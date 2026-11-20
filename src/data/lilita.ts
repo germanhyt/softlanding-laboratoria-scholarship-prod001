@@ -357,21 +357,21 @@ const es: Copy = {
 const en: Copy = {
   hero: {
     kicker: "The Lilita Fund by <Laboratoria>",
-    titleLead: "Nobody gets",
-    titleAccent: "there alone.",
-    body: "Laboratoria is entering a new chapter, and the Lilita Fund invites you into a growing network of mentors, partner companies, and graduates. Together we expand the social capital of talented women in Latin America and open the door to quality jobs.",
+    titleLead: "Nobody does",
+    titleAccent: "this alone.",
+    body: "As Laboratoria enters a new chapter, the Lilita Fund invites individual donors to join a growing network of mentors, hiring partners and graduates, expanding the social capital of talented women across Latin America and opening doors to quality jobs.",
     honor:
-      "The Lilita Fund honors Lilita, grandmother of our founder Mariana and Laboratoria's first angel investor, and keeps her confidence in women's talent alive.",
-    cta: "Fund a scholarship",
-    secondary: "Read Lilita's story",
+      "The Lilita Fund honors Laboratoria's first angel investor, Mariana's grandmother Lilita, by carrying her belief in talented women forward.",
+    cta: "Give a scholarship",
+    secondary: "Learn more about Lilita's story",
     imageAlt: "Illustration of Lilita, Laboratoria's first angel investor.",
   },
   program: {
-    title: "This is what we are building together.",
-    lede: "Skills, confidence, and community, all in one place.",
-    cta: "Fund a scholarship for Activa tu Carrera",
-    p1: "Laboratoria's Activa tu Carrera is the leading professional development experience for women in Latin America. It gives them the confidence, skills, and connections to reach better jobs and change their lives.",
-    p2: "Through a 12-week live, cohort-based, personalized program, we combine employability coaching, AI skill-building, and a network of mentors and industry specialists so participants can land a job that matches their skills and ambition.",
+    title: "This is what we're building together.",
+    lede: "",
+    cta: "Fund a scholarship to Activa tu Carrera",
+    p1: "Laboratoria's Activa tu Carrera is Latin America's leading professional development experience for women, equipping them with the confidence, skills, and connections to access better jobs and transform their lives.",
+    p2: "",
     more: "Learn more about Activa tu Carrera",
     outcomesTitle: "What your gift makes possible",
     prev: "Previous card",
@@ -379,48 +379,48 @@ const en: Copy = {
     outcomes: [
       {
         title: "Live group sessions",
-        body: "Peer reflection and learning that helps women put their story into words and connect with what employers are looking for.",
+        body: "Reflection and peer learning that help them put words into their story and connect to what employers are looking for.",
         stat: "88%",
-        statLabel: "fewer feelings of isolation and disconnection",
+        statLabel: "reduction in feelings of isolation and disconnection",
       },
       {
-        title: "AI job hub",
-        body: "Practical tools to polish a CV, practice interviews, and prepare for every application.",
+        title: "AI-powered Job Hub",
+        body: "Hands-on tools to sharpen their CV, practice interviews and prep for every application.",
         stat: "8 in 10",
-        statLabel: "know their next professional step by the end of the program",
+        statLabel: "know their next career step by the end of the program",
       },
       {
         title: "Expert mentoring + 1:1 coaching",
-        body: "Live sessions with industry experts who give real feedback and open their own networks.",
+        body: "Live sessions with industry experts who give real feedback and open doors to their own networks.",
         stat: "85%",
-        statLabel: "finish more confident they will get a job",
+        statLabel: "leave more confident they'll get hired",
       },
       {
         title: "Six weeks of AI upskilling",
-        body: "After a clear professional story and a search strategy, participants spend six weeks putting AI to work and build a project that shows what they can do.",
+        body: "After building a clear career story and job search strategy, participants spend six weeks putting AI to work, creating a project that shows what they can do.",
         stat: "6 weeks",
-        statLabel: "of applied AI, with Claude 101 certification at the end",
+        statLabel: "of applied AI, ending with the Claude 101 certification",
       },
     ],
     quote:
-      "“Laboratoria helped me realize that everything counts… it gave me the confidence I needed to take my next step with more certainty and direction, and a group of women just as ready to support one another.”",
+      "“Laboratoria helped me realize that everything adds up… it gave me the confidence I needed to take my next step with more certainty and direction, and a group of women with the same drive to support each other.”",
     quoteBy: "— Mayra Solórzano, Laboratoria graduate",
   },
   stories: {
-    title: "The scale of lives changed",
-    lede: "Every year Laboratoria supports thousands of women across Latin America, each with her own story.",
+    title: "The Enormity of Lives Transformed",
+    lede: "Every year, Laboratoria supports thousands of women across Latin America, each with their own unique story",
     prev: "Previous card",
     next: "Next card",
     read: "Read her story",
     close: "Close",
     play: "Play Gabriela Luna's video",
     videoName: "Gabriela Luna",
-    videoMeta: "Laboratoria graduate · Mexico",
+    videoMeta: "Laboratoria graduate · México",
     cta: "Help write the next success story.",
     items: [
       {
         name: "Luz Cornejo",
-        meta: "Activa tu Carrera graduate · Mexico · +40% salary",
+        meta: "Activa tu Carrera graduate · México · +40% salary",
         quote:
           "I felt like I was doing everything and nothing was coming back, so when I heard about Activa tu Carrera, I decided to ask for help.",
         image: "/images/lilita/story-1.webp",
@@ -428,75 +428,75 @@ const en: Copy = {
       },
       {
         name: "Jeimmy Patricia Díaz",
-        meta: "Activa tu Carrera graduate · Colombia · 2.3× her income",
+        meta: "Activa tu Carrera graduate · Colombia · 2.3× income",
         quote:
-          "In one word: wonderful! I found a job that gives me stability, for myself, my son, and my family.",
+          "In one word: wonderful. I found a job that gives me stability, for me, my son and my family.",
         image: "/images/lilita/story-2.webp",
         imageAlt: "Portrait of an Activa tu Carrera graduate",
       },
       {
         name: "Evelyn Cabrera Arias",
-        meta: "Activa tu Carrera graduate · Peru",
+        meta: "Activa tu Carrera graduate · Perú",
         quote:
-          "I found a community that pushes you, supports you, and reminds you that a professional path does not have to be a lonely one.",
+          "I found a community that pushes you, supports you, and reminds you that professional growth doesn't have to be a lonely path.",
         initial: "E",
       },
     ],
   },
   why: {
-    title: "Why isn't talent enough?",
-    body: "A quality job takes more than a degree. It takes the kind of support that, for many of us, arrived at no cost through a parent, a teacher, or a friend's friend. The women we accompany have to find that support on their own.",
+    title: "Why isn’t talent enough?",
+    body: "Landing a quality job takes more than a degree. It takes the kind of support that, for many of us, came for free through a parent, a professor, or a friend-of-a-friend. The women we serve have to find it on their own.",
     prev: "Previous stat",
     next: "Next stat",
     stats: [
       { value: "48M", label: "women in Latin America unemployed or underemployed" },
-      { value: "52%", label: "of women in the region have formal jobs, compared with 72% of men" },
-      { value: "3×", label: "more likely than men to hold roles exposed to AI automation" },
+      { value: "52%", label: "of women in the region hold formal jobs vs 72% of men" },
+      { value: "3×", label: "more likely than men to occupy roles vulnerable to AI automation" },
     ],
     needsLabel: "What it takes",
     needs: [
-      { title: "Tell your story", body: "Turn experience into a story employers understand." },
-      { title: "Strategy", body: "Know which roles to aim for and how to get there." },
-      { title: "Build a network", body: "People who can make an introduction or vouch for her talent." },
-      { title: "Hours of practice", body: "Mock interviews and real feedback before the real one." },
-      { title: "Someone beside her", body: "A coach, mentors, and peers who believe in her potential." },
+      { title: "Storytelling", body: "Turning experience into a story employers understand." },
+      { title: "Strategy", body: "Knowing which roles to aim for and how to get there." },
+      { title: "Building a network", body: "People who can make an introduction or vouch for their talent." },
+      { title: "Hours of practice", body: "Mock interviews and real feedback before the real thing." },
+      { title: "Someone in their corner", body: "A coach, mentors and peers who believe in their potential." },
     ],
     quote:
-      "“My parents paid for my education hoping a university degree would open the door to better opportunities. It didn't.”",
+      "My parents financed my education hoping that a university degree would open doors to better opportunities. It didn’t.",
     quoteBy: "Jessica Esparza",
     quoteRole: "Laboratoria graduate",
     imageAlt: "Activa tu Carrera graduates celebrating together",
   },
   lilita: {
-    title: "It all started with her",
-    p1: "In 2014, Mariana and her co-founders had a vision: help thousands of women reach quality jobs in technology. Today, Laboratoria has reached more than 14,000 women.",
-    p2: "But before Laboratoria had a name or a single graduate, someone saw what Mariana could do. Laboratoria's first angel investor was Lilita, Mariana's grandmother, a woman who believed economic independence gives women the freedom to define their own lives. She saw that same conviction in her granddaughter, and the talent to make it real, and she bet on her.",
-    p3: "The Lilita Fund carries that conviction forward: when a woman has the means to build her own career, she gains the power to decide her own future. Every woman who joins Activa tu Carrera brings the talent, experience, and determination to do it, but talent alone does not always open the door. Gifts to the fund let us offer the program at no cost, so every talented woman has a chance to take her career further.",
+    title: "The Story Behind the Fund",
+    p1: "In 2014, Mariana and her co-founders had a vision: to help thousands of women access quality jobs in tech. Today, Laboratoria has impacted more than 14,000 women.",
+    p2: "But before Laboratoria had a name or a single graduate, someone saw what Mariana was capable of. Laboratoria's first angel investor was Lilita, Mariana's grandmother, a woman who believed that economic independence gives women the freedom to shape their own lives. In her granddaughter, she saw both that conviction and the talent to turn it into something real, and she chose to bet on her.",
+    p3: "The Lilita Fund carries that same belief forward: that when a woman has the means to build her own career, she gains the power to decide her own future. Every woman who joins Activa tu Carrera brings the talent, experience, and drive to get there, but talent alone doesn't always open the door. Gifts to the Lilita Fund allow us to offer the program at no cost, so every woman with the talent gets the chance to take her career further.",
     cta: "Honor someone who opened a door for you",
     imageAlt: "Lilita, Mariana's grandmother and Laboratoria's first angel investor.",
     drawingAlt: "Illustration of Lilita seated.",
   },
   founders: {
     kicker: "The Lilita Fund by <Laboratoria>",
-    title: "Founders wall",
-    body: "Our founding donors are the first to carry that confidence forward: the people who gave in the Lilita Fund's first year and opened the door for every woman who comes next.",
+    title: "Wall of Founders",
+    body: "Our founding donors are the first to carry that belief forward: the people who gave in the Lilita Fund's first year and opened the door for every woman who comes next.",
     groups: [
-      { title: "Laboratoria's Board", body: "Our board members, giving alongside our community." },
-      { title: "Laboratoria graduates", body: "Women who went through the program and now open the door for the next one." },
+      { title: "Laboratoria Board", body: "Our board members, giving alongside our community." },
+      { title: "Laboratoria graduates", body: "Women who've been through the program, opening the door for the next." },
       { title: "Friends of Laboratoria", body: "Laboratorians, mentors, partners, and friends who believe in this work." },
     ],
     cta: "Become a founding donor",
     drawingAlt: "Illustration of Lilita.",
   },
   give: {
-    title: "Every gift adds up to a complete career",
-    pillLead: "US$500",
-    pillRest: "fund a full scholarship.",
+    title: "Every gift adds up to a full career",
+    pillLead: "$500",
+    pillRest: "funds a full scholarship.",
     support: "Gifts of every size make a difference.",
     roi: "Over 5 years, every dollar invested generates",
     roiStrong: "14x",
-    roiRest: "in women's earnings.*",
-    community: "Prefer to give with others? Start a fundraiser or a giving circle →",
+    roiRest: "in women's income.*",
+    community: "Prefer to give with others? Start a fundraiser or giving circle →",
   },
   ways: {
     title: "More ways to give",
@@ -514,8 +514,8 @@ const en: Copy = {
         href: links.contact,
       },
       {
-        title: "Double your gift",
-        body: "Many employers match donations. Search for Laboratoria in your company portal or use our Cause ID:",
+        title: "Employee Matching",
+        body: "Many employers match donations. Find Laboratoria in your company's giving portal, or use our Cause ID:",
         cta: "How matching works",
         href: "#faq-matching",
       },
@@ -525,10 +525,10 @@ const en: Copy = {
     copied: "Copied",
     matching: "How matching works",
   },
-  faqTitle: "Questions, answered",
+  faqTitle: "FAQ",
   faq: [
     {
-      question: "What is the Lilita Fund?",
+      question: "What is the Scholarship Fund (the Lilita Fund)?",
       answer:
         "A shared fund that keeps Activa tu Carrera free for women who otherwise couldn't afford it. It covers coaching, AI tools, mentoring, and the community that supports them. Gifts are pooled rather than assigned to one woman, so together they fund complete program experiences.",
     },
@@ -568,7 +568,7 @@ const en: Copy = {
       answer: "Yes. Choose “Honor someone” and we'll send a note to the person you want to recognize.",
     },
     {
-      question: "Can I give monthly?",
+      question: "Can I set up a recurring gift?",
       answer: "Yes. Choose the monthly option at checkout.",
     },
     {
@@ -577,15 +577,251 @@ const en: Copy = {
     },
   ],
   final: {
-    title: "Nobody gets there alone.",
-    cta: "Fund a scholarship",
-    secondary: "More ways to give",
+    title: "Nobody does this alone.",
+    cta: "Give a scholarship",
+    secondary: "Other ways to give",
     imageAlt: "Women from the Laboratoria community gathered together",
   },
   disclaimer:
-    "*Based on Laboratoria's 2026 analysis of graduate income before and after Activa tu Carrera, using the Livelihood Impact Fund ROI method (median). Years two through five project that graduates sustain that income increase.",
+    "*Based on Laboratoria's 2026 analysis of graduates' income before and after Activa tu Carrera, using the Livelihood Impact Fund's ROI methodology (median). Years two to five are projected from 12-month follow-up data.",
+};
+
+const programBr = "[PROGRAM NAME IN BRAZIL]";
+
+const pt: Copy = {
+  hero: {
+    kicker: "Lilita Fund por <Laboratoria>",
+    titleLead: "Ninguém chega",
+    titleAccent: "lá sozinha.",
+    body: "A Laboratoria entra em uma nova etapa. O Lilita Fund convida você a fazer parte de uma rede cada vez maior de mentoras, empresas que contratam e egressas. Juntas, essa rede e as pessoas que doam ampliam o capital social de mulheres talentosas em toda a América Latina e abrem portas para empregos de qualidade.",
+    honor:
+      "O Lilita Fund homenageia a primeira investidora-anjo da Laboratoria, Lilita, avó de Mariana, e leva adiante sua confiança no talento das mulheres.",
+    cta: "Doe uma bolsa",
+    secondary: "Conheça a história da Lilita",
+    imageAlt: "Ilustração de Lilita, primeira investidora-anjo da Laboratoria.",
+  },
+  program: {
+    title: "É isso que estamos construindo juntas.",
+    lede: "",
+    cta: `Doe uma bolsa para o ${programBr}`,
+    p1: `O ${programBr} da Laboratoria é a principal experiência de desenvolvimento profissional da América Latina para mulheres, e as equipa com a confiança, as habilidades e as conexões para acessar empregos melhores e transformar suas vidas.`,
+    p2: "",
+    more: `Saiba mais sobre o ${programBr}`,
+    outcomesTitle: "O que sua doação torna possível",
+    prev: "Cartão anterior",
+    next: "Próximo cartão",
+    outcomes: [
+      {
+        title: "Encontros em grupo ao vivo",
+        body: "Reflexão e aprendizado entre colegas para colocar suas histórias em palavras e conectar suas experiências ao que as empresas procuram.",
+        stat: "88%",
+        statLabel: "de redução nos sentimentos de isolamento e desconexão",
+      },
+      {
+        title: "Central de empregos com IA",
+        body: "Ferramentas práticas para aprimorar o currículo, treinar entrevistas e se preparar para cada candidatura.",
+        stat: "8 em 10",
+        statLabel: "sabem qual é o próximo passo na carreira ao final do programa",
+      },
+      {
+        title: "Mentoria especializada + orientação individual",
+        body: "Encontros ao vivo com especialistas do setor que oferecem avaliações sinceras e abrem portas para suas próprias redes de contatos.",
+        stat: "85%",
+        statLabel: "saem mais confiantes de que vão conseguir um emprego",
+      },
+      {
+        title: "Seis semanas de formação em IA",
+        body: "Depois de definir sua história profissional e uma estratégia de busca por emprego, as participantes dedicam seis semanas a colocar a IA em prática. Criam um projeto que mostra o que são capazes de fazer.",
+        stat: "6 semanas",
+        statLabel: "de IA aplicada, com a certificação Claude 101 ao final",
+      },
+    ],
+    quote:
+      "“A Laboratoria me ajudou a perceber que tudo conta… me deu a confiança de que eu precisava para dar o próximo passo com mais certeza e direção, e um grupo de mulheres com a mesma vontade de apoiar umas às outras.”",
+    quoteBy: "— Mayra Solórzano, egressa da Laboratoria",
+  },
+  stories: {
+    title: "Histórias que transformam",
+    lede: "Todos os anos, a Laboratoria apoia milhares de mulheres em toda a América Latina. Cada uma tem uma história única",
+    prev: "Cartão anterior",
+    next: "Próximo cartão",
+    read: "Leia sua história",
+    close: "Fechar",
+    play: "Reproduzir o vídeo de Gabriela Luna",
+    videoName: "Gabriela Luna",
+    videoMeta: "Egressa da Laboratoria · México",
+    cta: "Ajude a escrever a próxima história de sucesso.",
+    items: [
+      {
+        name: "Luz Cornejo",
+        meta: `Egressa do ${programBr} · México · +40% de salário`,
+        quote: `Eu sentia que fazia de tudo e nada dava resultado. Quando soube do ${programBr}, decidi pedir ajuda.`,
+        image: "/images/lilita/story-1.webp",
+        imageAlt: `Retrato de Luz Cornejo, egressa do ${programBr}`,
+      },
+      {
+        name: "Jeimmy Patricia Díaz",
+        meta: `Egressa do ${programBr} · Colombia · 2,3× a renda`,
+        quote: "Em uma palavra: maravilhoso. Encontrei um trabalho que traz estabilidade para mim, meu filho e minha família.",
+        image: "/images/lilita/story-2.webp",
+        imageAlt: `Retrato de Jeimmy Patricia Díaz, egressa do ${programBr}`,
+      },
+      {
+        name: "Evelyn Cabrera Arias",
+        meta: `Egressa do ${programBr} · Perú`,
+        quote: "Encontrei uma comunidade que incentiva, apoia e lembra que crescer na carreira não precisa ser um caminho solitário.",
+        initial: "E",
+      },
+    ],
+  },
+  why: {
+    title: "Por que talento não basta?",
+    body: "Conquistar um emprego de qualidade exige mais que um diploma. Exige aquele apoio que, para muitas de nós, veio de graça: da família, de uma professora ou de alguém conhecido de uma amiga. As mulheres que apoiamos precisam encontrar tudo isso por conta própria.",
+    prev: "Dado anterior",
+    next: "Próximo dado",
+    stats: [
+      { value: "48 mi", label: "de mulheres na América Latina estão desempregadas ou subempregadas" },
+      { value: "52%", label: "das mulheres da região têm empregos formais, contra 72% dos homens" },
+      { value: "3×", label: "mais chances que os homens de ocupar funções vulneráveis à automação por IA" },
+    ],
+    needsLabel: "O que é preciso",
+    needs: [
+      { title: "Contar sua história", body: "Transformar a experiência em uma história que as empresas entendam." },
+      { title: "Estratégia", body: "Saber quais vagas buscar e como chegar até elas." },
+      { title: "Construir uma rede", body: "Pessoas que possam fazer uma apresentação ou recomendar seu talento." },
+      { title: "Horas de prática", body: "Simulações de entrevistas e avaliações sinceras antes da entrevista de verdade." },
+      { title: "Alguém ao seu lado", body: "Uma orientadora, mentoras e colegas que acreditam em seu potencial." },
+    ],
+    quote:
+      "Meus pais pagaram meus estudos na esperança de que um diploma universitário abrisse portas para oportunidades melhores. Não abriu.",
+    quoteBy: "Jessica Esparza",
+    quoteRole: "egressa da Laboratoria",
+    imageAlt: `Egressas do ${programBr} celebram juntas.`,
+  },
+  lilita: {
+    title: "Tudo começou com ela",
+    p1: "Em 2014, Mariana e as pessoas que fundaram a Laboratoria com ela tinham uma visão: ajudar milhares de mulheres a conquistar empregos de qualidade em tecnologia. Hoje, a Laboratoria já impactou mais de 14.000 mulheres.",
+    p2: "Mas antes de a Laboratoria ter um nome ou uma única egressa, alguém enxergou do que Mariana era capaz. A primeira investidora-anjo da Laboratoria foi Lilita, sua avó, uma mulher que acreditava que a independência econômica dá às mulheres a liberdade de escolher o rumo de suas vidas. Na neta, ela viu essa mesma convicção e o talento para torná-la realidade. E escolheu apostar nela.",
+    p3: `O Lilita Fund leva adiante essa mesma confiança: quando uma mulher tem os meios para construir sua carreira, ganha o poder de decidir seu futuro. Cada mulher que chega ao ${programBr} traz talento, experiência e vontade de ir além. Mas o talento, sozinho, nem sempre abre a porta. As doações ao Lilita Fund nos permitem oferecer o programa sem custo, para que toda mulher com talento tenha a chance de avançar na carreira.`,
+    cta: "Homenageie alguém que abriu uma porta para você",
+    imageAlt: "Lilita, avó de Mariana e primeira investidora-anjo da Laboratoria.",
+    drawingAlt: "Ilustração de Lilita sentada.",
+  },
+  founders: {
+    kicker: "Lilita Fund por <Laboratoria>",
+    title: "Nossa comunidade fundadora",
+    body: "Nossa comunidade fundadora é a primeira a levar essa confiança adiante: pessoas que doaram no primeiro ano do Lilita Fund e abriram a porta para cada mulher que vem depois.",
+    groups: [
+      { title: "Conselho da Laboratoria", body: "Quem faz parte do nosso conselho doa junto com nossa comunidade." },
+      { title: "Egressas da Laboratoria", body: "Mulheres que passaram pelo programa e abrem a porta para as próximas." },
+      {
+        title: "Amigas e amigos da Laboratoria",
+        body: "Pessoas da Laboratoria, mentoras, organizações parceiras e amizades que acreditam neste trabalho.",
+      },
+    ],
+    cta: "Faça parte da comunidade fundadora",
+    drawingAlt: "Ilustração de Lilita.",
+  },
+  give: {
+    title: "Cada doação soma para uma carreira inteira",
+    pillLead: "US$ 500",
+    pillRest: "financiam uma bolsa completa.",
+    support: "Toda doação, de qualquer valor, faz a diferença.",
+    roi: "Em 5 anos, cada dólar investido gera",
+    roiStrong: "14×",
+    roiRest: "na renda das mulheres.*",
+    community: "Prefere doar em comunidade? Crie uma campanha ou um círculo de doação →",
+  },
+  ways: {
+    title: "Outras formas de doar",
+    items: [
+      {
+        title: "Homenageie alguém",
+        body: "Faça uma doação em nome de alguém que marcou sua carreira. Enviaremos uma mensagem a essa pessoa.",
+        cta: "Homenageie alguém",
+        href: links.honorCard,
+      },
+      {
+        title: "Crie uma campanha de arrecadação",
+        body: "Lance uma campanha on-line, crie um círculo de doação ou organize um encontro. Ajudamos você a tirar a ideia do papel.",
+        cta: "Fale com a gente",
+        href: links.contact,
+      },
+      {
+        title: "Dobre sua doação",
+        body: "Muitas empresas fazem doações equivalentes às de suas equipes. Encontre a Laboratoria no portal de doações da sua empresa ou use nosso Cause ID:",
+        cta: "Como funciona a doação equivalente",
+        href: "#faq-matching",
+      },
+    ],
+    causeLabel: "Copiar Cause ID",
+    copy: "Copiar",
+    copied: "Copiado",
+    matching: "Como funciona a doação equivalente",
+  },
+  faqTitle: "Perguntas frequentes",
+  faq: [
+    {
+      question: "O que é o Lilita Fund?",
+      answer:
+        "É um fundo compartilhado que mantém o programa gratuito para mulheres que, de outro modo, não poderiam pagá-lo. Cobre orientação, ferramentas de IA, mentoria e a comunidade que as apoia. As doações se reúnem em vez de serem destinadas a uma única mulher, para financiar juntas experiências completas no programa.",
+    },
+    {
+      question: "Minha doação pode ser deduzida do imposto?",
+      answer:
+        "O comprovante é emitido pela plataforma ao concluir a doação. Se esse aporte pode ser deduzido depende do seu país e da entidade que o recebe. Guarde o recibo do pagamento se precisar dele na declaração.",
+    },
+    {
+      question: "Como minha doação é usada?",
+      answer:
+        "Ela entra no fundo compartilhado do Lilita Fund. Com esse fundo, o programa é oferecido sem custo: orientação, ferramentas de IA, mentoria e a comunidade. Seu aporte não é destinado a uma única mulher; ele se soma ao de outras pessoas para financiar experiências completas.",
+    },
+    {
+      question: "A Laboratoria é uma organização sem fins lucrativos registrada?",
+      answer: "Sim. A Laboratoria trabalha na América Latina desde 2014.",
+    },
+    {
+      id: "faq-matching",
+      question: "Como funciona a doação equivalente da minha empresa?",
+      answer: "Muitas empresas igualam as doações de suas equipes. Costuma levar alguns minutos:",
+      steps: [
+        { lead: "Doe nesta página." },
+        {
+          lead: "Procure a Laboratoria no portal da sua empresa (como Benevity, YourCause ou Bright Funds)",
+          rest: "pelo nome ou com o Cause ID: 815071835.",
+        },
+        {
+          lead: "Solicite a doação equivalente.",
+          rest: "Sua empresa envia o aporte diretamente à Laboratoria.",
+        },
+      ],
+      note: "Não sabe se a sua empresa faz doação equivalente? Pergunte ao time de RH.",
+    },
+    {
+      question: "Posso doar em homenagem a alguém?",
+      answer: "Sim. Escolha «Homenageie alguém» e enviaremos uma mensagem à pessoa que você quer reconhecer.",
+    },
+    {
+      question: "Posso fazer uma doação recorrente?",
+      answer: "Sim. Escolha a opção mensal ao concluir sua doação.",
+    },
+    {
+      question: "Como crio um círculo de doação ou uma campanha de arrecadação?",
+      answer: "Escolha «Crie uma campanha de arrecadação» e entraremos em contato com tudo o que você precisa.",
+    },
+  ],
+  final: {
+    title: "Ninguém chega lá sozinha.",
+    cta: "Doe uma bolsa",
+    secondary: "Outras formas de doar",
+    imageAlt: "Egressas da Laboratoria celebram juntas",
+  },
+  disclaimer:
+    `*Com base na análise de 2026 da Laboratoria sobre a renda das egressas antes e depois do ${programBr}, com a metodologia de retorno sobre o investimento do Livelihood Impact Fund (mediana). Os anos dois a cinco são projetados a partir dos dados de acompanhamento de 12 meses.`,
 };
 
 export function getLilitaCopy(lang: Lang): Copy {
-  return lang === "en" ? en : es;
+  if (lang === "en") return en;
+  if (lang === "pt") return pt;
+  return es;
 }

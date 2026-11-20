@@ -7,6 +7,9 @@ interface Props {
 
 const { copy } = Astro.props;
 const hero = copy.hero;
+const kickerMatch = hero.kicker.match(/^(.*)\s+(by|por)\s+(.*)$/);
+const kickerLead = kickerMatch?.[1] ?? hero.kicker;
+const kickerBy = kickerMatch ? `${kickerMatch[2]} ${kickerMatch[3]}` : "";
 ---
 
 <section class="relative overflow-hidden bg-brand-cream px-6 text-brand-navy">
@@ -14,10 +17,12 @@ const hero = copy.hero;
     <div class="grid items-stretch gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-14">
       <div>
         <p class="text-sm font-bold uppercase tracking-[0.18em]" data-reveal>
-          The Lilita Fund
-          <span class="text-xs font-normal normal-case tracking-normal text-brand-navy/80">
-            by &lt;Laboratoria&gt;
-          </span>
+          {kickerLead}
+          {kickerBy && (
+            <span class="text-xs font-normal normal-case tracking-normal text-brand-navy/80">
+              {kickerBy}
+            </span>
+          )}
         </p>
         <h1
           class="mt-5 font-display text-[44px] font-normal leading-[0.95] sm:text-[52px] lg:text-[80px]"

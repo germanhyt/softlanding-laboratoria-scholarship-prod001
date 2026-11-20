@@ -8,6 +8,9 @@ interface Props {
 const { copy } = Astro.props;
 const lilita = copy.lilita;
 const founders = copy.founders;
+const kickerMatch = founders.kicker.match(/^(.*)\s+(by|por)\s+(.*)$/);
+const kickerLead = kickerMatch?.[1] ?? founders.kicker;
+const kickerBy = kickerMatch ? `${kickerMatch[2]} ${kickerMatch[3]}` : "";
 const titleParts = founders.title.trim().split(" ");
 const titleAccent = titleParts.pop() ?? founders.title;
 const titleLead = titleParts.join(" ");
@@ -61,8 +64,8 @@ const icons = [
     </div>
     <div class="text-center lg:text-left">
       <p class="text-sm font-bold uppercase tracking-[0.18em]" data-reveal>
-        The Lilita Fund
-        <span class="text-xs font-normal normal-case tracking-normal opacity-80">by &lt;Laboratoria&gt;</span>
+        {kickerLead}
+        {kickerBy && <span class="text-xs font-normal normal-case tracking-normal opacity-80">{kickerBy}</span>}
       </p>
       <h2 class="mt-5 font-display text-[40px] font-normal leading-[1.05] tracking-[-0.5px] lg:text-[60px]" data-reveal>
         {titleLead}{" "}
