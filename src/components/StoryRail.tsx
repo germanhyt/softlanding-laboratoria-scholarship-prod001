@@ -13,6 +13,7 @@ type Props = {
   playLabel: string;
   videoName: string;
   videoMeta: string;
+  videoSrc?: string;
   items: Story[];
 };
 
@@ -28,6 +29,7 @@ export default function StoryRail({
   playLabel,
   videoName,
   videoMeta,
+  videoSrc = "/images/lilita/gabriela.mp4",
   items,
 }: Props) {
   const scroller = useRef<HTMLDivElement>(null);
@@ -58,7 +60,7 @@ export default function StoryRail({
               {playing ? (
                 <video
                   className="absolute inset-0 h-full w-full bg-brand-ink object-cover"
-                  src="/images/lilita/gabriela.mp4"
+                  src={videoSrc}
                   poster="/images/lilita/gabriela-poster.jpg"
                   aria-label={playLabel}
                   controls

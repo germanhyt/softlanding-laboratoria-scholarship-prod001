@@ -12,7 +12,7 @@ export const links = {
   honorCard: pledge("honor-card"),
   closing: pledge("closing"),
   activa: "https://laboratoria.la/activa-tu-carrera/",
-  about: "https://www.laboratoria.la",
+  about: "https://laboratoria.la",
   contact: "mailto:partnerships@laboratoria.la",
   causeId: "815071835",
 } as const;
@@ -213,7 +213,7 @@ const es: Copy = {
   },
   why: {
     title: "¿Por qué no basta con tener talento?",
-    body: "Conseguir un empleo de calidad requiere más que un título. Requiere el tipo de apoyo que, para muchas de nosotras, llegó sin costo, por medio de un padre, una profesora o una amiga de alguien. Las mujeres a las que acompañamos tienen que encontrarlo por su cuenta.",
+    body: "Un empleo de calidad requiere más que un título. Requiere un apoyo que rara vez aparece en un CV: una madre o un padre que conoce el sector, una profesora que te presenta con la persona indicada, una amiga que te recomienda. Esas redes no están al alcance de todas por igual, y el talento por sí solo no puede reemplazarlas.",
     prev: "Dato anterior",
     next: "Dato siguiente",
     stats: [
@@ -247,13 +247,13 @@ const es: Copy = {
   founders: {
     kicker: "The Lilita Fund by <Laboratoria>",
     title: "Muro de Fundadores",
-    body: "Nuestros donantes fundadores son los primeros en llevar esa confianza hacia adelante: las personas que donaron en el primer año del Lilita Fund y abrieron la puerta a cada mujer que viene después.",
+    body: "Lilita creyó primero. Nuestros donantes fundadores son los siguientes en llevar esa confianza hacia adelante. Con una donación de US$5,000 o más, puedes sumarte y ayudar a abrirle la puerta a más mujeres.",
     groups: [
       { title: "Consejo Directivo de Laboratoria", body: "Nuestras y nuestros consejeros, donando junto a nuestra comunidad." },
       { title: "Egresadas de Laboratoria", body: "Mujeres que pasaron por el programa y hoy abren la puerta a la siguiente." },
       { title: "Amigas y amigos de Laboratoria", body: "Laboratorians, mentoras, aliados y amigos que creen en este trabajo." },
     ],
-    cta: "Sé donante fundador",
+    cta: "¿Te interesa ser donante matching? Contáctanos.",
     drawingAlt: "Ilustración de Lilita.",
   },
   give: {
@@ -261,9 +261,9 @@ const es: Copy = {
     pillLead: "US$500",
     pillRest: "financian una beca completa.",
     support: "Las donaciones de todos los tamaños hacen la diferencia.",
-    roi: "En 5 años, cada dólar invertido genera",
-    roiStrong: "14x",
-    roiRest: "en los ingresos de las mujeres.*",
+    roi: "Por cada dólar que tú invertes en Laboratoria, en 5 años genera",
+    roiStrong: "14 veces más",
+    roiRest: "en los ingresos de nuestras egresadas. (Livelihood Impact Fund ROI method)",
     community: "¿Prefieres donar en comunidad? Crea una colecta o un círculo de donantes →",
   },
   ways: {
@@ -312,7 +312,8 @@ const es: Copy = {
     },
     {
       question: "¿Laboratoria es una organización sin fines de lucro registrada?",
-      answer: "Sí. Laboratoria trabaja en América Latina desde 2014.",
+      answer:
+        "Sí. En Estados Unidos, Laboratoria es una organización sin fines de lucro registrada bajo la categoría 501(c)(3), con EIN 81-5071835. Las donaciones realizadas en Estados Unidos son deducibles de impuestos en la medida en que lo permita la ley. En América Latina, Laboratoria está registrada legalmente como organización sin fines de lucro en México, Perú, Chile, Colombia y Brasil. Trabajamos en la región desde 2014.",
     },
     {
       id: "faq-matching",
@@ -445,7 +446,7 @@ const en: Copy = {
   },
   why: {
     title: "Why isn’t talent enough?",
-    body: "Landing a quality job takes more than a degree. It takes the kind of support that, for many of us, came for free through a parent, a professor, or a friend-of-a-friend. The women we serve have to find it on their own.",
+    body: "A quality job takes more than a degree. It takes support that rarely shows up on a résumé: a parent who knows the industry, a teacher who makes an introduction, a friend who passes your name along. Those networks aren’t equally shared, and talent alone can’t replace them.",
     prev: "Previous stat",
     next: "Next stat",
     stats: [
@@ -479,13 +480,13 @@ const en: Copy = {
   founders: {
     kicker: "The Lilita Fund by <Laboratoria>",
     title: "Wall of Founders",
-    body: "Our founding donors are the first to carry that belief forward: the people who gave in the Lilita Fund's first year and opened the door for every woman who comes next.",
+    body: "Be part of the first circle. A gift of $5,000 or more makes you a Founding Donor of the Lilita Fund, one of the people who made it possible from day one.",
     groups: [
       { title: "Laboratoria Board", body: "Our board members, giving alongside our community." },
       { title: "Laboratoria graduates", body: "Women who've been through the program, opening the door for the next." },
       { title: "Friends of Laboratoria", body: "Laboratorians, mentors, partners, and friends who believe in this work." },
     ],
-    cta: "Become a founding donor",
+    cta: "Interested in becoming a Matching Donor? Contact us.",
     drawingAlt: "Illustration of Lilita.",
   },
   give: {
@@ -493,9 +494,9 @@ const en: Copy = {
     pillLead: "$500",
     pillRest: "funds a full scholarship.",
     support: "Gifts of every size make a difference.",
-    roi: "Over 5 years, every dollar invested generates",
+    roi: "Every dollar you invest in Laboratoria, generates over 5 years,",
     roiStrong: "14x",
-    roiRest: "in women's income.*",
+    roiRest: "in graduate's earnings. (Livelihood Impact Fund ROI method)",
     community: "Prefer to give with others? Start a fundraiser or giving circle →",
   },
   ways: {
@@ -544,7 +545,8 @@ const en: Copy = {
     },
     {
       question: "Is Laboratoria a registered nonprofit?",
-      answer: "Yes. Laboratoria has worked across Latin America since 2014.",
+      answer:
+        "Yes. In the United States, Laboratoria is a registered 501(c)(3) nonprofit organization EIN:81-5071835. Donations made in the U.S. are tax-deductible to the extent allowed by law. In Latin America, Laboratoria is legally registered as a nonprofit organization in Mexico, Peru, Chile, Colombia and Brazil. We have been working across the region since 2014.",
     },
     {
       id: "faq-matching",
@@ -717,7 +719,7 @@ const pt: Copy = {
         body: "Pessoas da Laboratoria, mentoras, organizações parceiras e amizades que acreditam neste trabalho.",
       },
     ],
-    cta: "Faça parte da comunidade fundadora",
+    cta: "Quer ser uma doadora de matching? Fale com a gente.",
     drawingAlt: "Ilustração de Lilita.",
   },
   give: {
