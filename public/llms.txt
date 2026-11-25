@@ -14,7 +14,7 @@
 - Contact: partnerships@laboratoria.la
 
 ## What this site is
-A bilingual landing in Spanish and English, plus Brazilian Portuguese, for the Lilita Fund. It explains Lilita's story, what a gift funds inside Activa tu Carrera, founder giving, other ways to give, and FAQs. Gifts are completed on Pledge. The Portuguese page keeps the placeholder "[PROGRAM NAME IN BRAZIL]" where the local program name is not final.
+A landing in Spanish, English, and Brazilian Portuguese for the Lilita Fund. It explains Lilita's story, what a gift funds, founder giving, other ways to give, and FAQs. Gifts are completed on Pledge. Spanish and English call the program Activa tu Carrera. Portuguese calls it Ativa sua Carreira and states that, over 5 years, each dollar invested generates US$ 14 more in the women's income.
 
 ## Languages
 - Spanish (`es`) is the default locale at `/`

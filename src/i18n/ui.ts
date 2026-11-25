@@ -284,9 +284,9 @@ const en: { [K in keyof typeof es]: string } = {
 
 const pt: { [K in keyof typeof es]: string } = {
   ...en,
-  "meta.title": "Lilita Fund — Ninguém chega lá sozinha",
+  "meta.title": "Lilita Fund — Ninguém precisa avançar sozinha",
   "meta.description":
-    "A Laboratoria entra em uma nova etapa. O Lilita Fund convida você a fazer parte de uma rede de mentoras, empresas que contratam e egressas.",
+    "A Laboratoria está começando um novo capítulo, e o Lilita Fund convida você a fazer parte dele. Ao doar, você se junta a uma rede de mentoras, empresas parceiras e egressas.",
   "meta.ogImageAlt": "Mulheres da comunidade Laboratoria reunidas em um encontro",
   "meta.keywords":
     "Laboratoria, Lilita Fund, bolsas, doações, mulheres, América Latina",
