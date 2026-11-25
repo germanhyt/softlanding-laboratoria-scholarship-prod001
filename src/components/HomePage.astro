@@ -21,6 +21,11 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const copy = getLilitaCopy(lang);
+const storyVideo = {
+  es: "/images/lilita/gabriela-es.mp4",
+  en: "/images/lilita/gabriela-en.mp4",
+  pt: "/images/lilita/gabriela-pt.mp4",
+}[lang];
 ---
 
 <Layout lang={lang} title={t("meta.title")} description={t("meta.description")} donateName={copy.hero.cta} faqItems={copy.faq}>
@@ -41,7 +46,7 @@ const copy = getLilitaCopy(lang);
       playLabel={copy.stories.play}
       videoName={copy.stories.videoName}
       videoMeta={copy.stories.videoMeta}
-      videoSrc="/images/lilita/gabriela-en.mp4"
+      videoSrc={storyVideo}
       items={copy.stories.items}
     />
     <LilitaWhy copy={copy} />
