@@ -261,7 +261,7 @@ const es: Copy = {
     pillLead: "US$500",
     pillRest: "financian una beca completa.",
     support: "Las donaciones de todos los tamaños hacen la diferencia.",
-    roi: "Por cada dólar que tú invertes en Laboratoria, en 5 años genera",
+    roi: "Por cada dólar que tú inviertes en Laboratoria, en 5 años genera",
     roiStrong: "14 veces más",
     roiRest: "en los ingresos de nuestras egresadas. (Livelihood Impact Fund ROI method)",
     community: "¿Prefieres donar en comunidad? Crea una colecta o un círculo de donantes →",
