@@ -29,7 +29,7 @@ export default function StoryRail({
   playLabel,
   videoName,
   videoMeta,
-  videoSrc = "/images/lilita/gabriela.mp4",
+  videoSrc = "/images/lilita/gabriela-en.mp4",
   items,
 }: Props) {
   const scroller = useRef<HTMLDivElement>(null);
